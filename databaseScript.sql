@@ -30,7 +30,7 @@ CREATE TABLE `Mitarbeiter`
 	`Email` Char(255),
 	`Steuernummer` Int,
 	`Lohn` Money,
-	PRIAMARY KEY(`Mitarbeiter_ID`)
+	PRIMARY KEY(`Mitarbeiter_ID`)
 )
 ;
 
