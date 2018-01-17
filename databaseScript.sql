@@ -29,7 +29,7 @@ CREATE TABLE `Mitarbeiter`
 	`Telefon` Char(255),
 	`Email` Char(255),
 	`Steuernummer` Int,
-	`Lohn` Money,
+	`Lohn` Double,
 	PRIMARY KEY(`Mitarbeiter_ID`)
 )
 ;
@@ -93,7 +93,7 @@ CREATE TABLE `Artikel`
 	`Artikel_ID` Char(10),
 	`Name` Char(255),
 	`Beschreibung` Char(255),
-	`Verkaufspreis` Money,
+	`Verkaufspreis` Double,
 	`Auftrag_ID` Char(10),
 	PRIMARY KEY(`Artikel_ID`),
 	FOREIGN KEY(`Auftrag_ID`)
@@ -106,7 +106,7 @@ CREATE TABLE `Produkt`
 (
 	`Produkt_ID` Char(10),
 	`Name` Char(255),
-	`Einkaufspreis` Money,
+	`Einkaufspreis` Double,
 	`Lagerbestand` int,
 	`Mindestbestand` int,
 	`Kategorie_ID` Char(10),
