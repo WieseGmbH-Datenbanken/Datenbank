@@ -69,7 +69,7 @@ INSERT INTO adresse VALUES('1', 'Atilleriestraße', '50529', 'Pulheim', NULL, '1
 	`Kunde_ID` Char(10),
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO kundenbestellung VALUES('1', '', true, '1', '1');
+INSERT INTO kundenbestellung VALUES('1', '07.01.2018', true, '1', '1');
 
 
 /*
