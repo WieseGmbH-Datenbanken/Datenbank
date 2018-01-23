@@ -69,7 +69,7 @@ INSERT INTO adresse VALUES('1', 'Atilleriestraße', '50529', 'Pulheim', NULL, '1
 	`Kunde_ID` Char(10),
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO kundenbestellung VALUES('1', '07.01.2018', true, '1', '1');
+INSERT INTO kundenbestellung VALUES('1', STR_TO_DATE('1/10/2018 8:06:26 AM', '%c/%e/%Y %r'), true, '1', '1');
 
 
 /*
@@ -111,7 +111,7 @@ INSERT INTO produkt_artikel VALUES('1', '1');
 	`Status` Bool,
 	`Lieferant_ID` Char(10),)
 */
-INSERT INTO lieferantenbestellung VALUES('1', '20.1.2018', false, '1');
+INSERT INTO lieferantenbestellung VALUES('1', STR_TO_DATE('1/15/2018 10:06:26 AM', '%c/%e/%Y %r'), false, '1');
 
 
 /*
