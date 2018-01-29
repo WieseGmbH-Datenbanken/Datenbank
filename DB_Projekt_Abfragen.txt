@@ -59,9 +59,15 @@ Alle Kundenbestellungen
 
 SELECT kunde.Name, kunde.Vorname, kundenbestellung.Auftrag_ID, artikel.Name
 
+
 FROM kunde JOIN kundenbestellung ON kunde.Kunde_ID = kundenbestellung.Kunde_ID
 
-JOIN artikel ON kundenbestellung.Auftrag_ID = artikel.Auftrag_ID
+
+JOIN artikel_Kundenbestellung ON artikel_Kundenbestellung.Auftrag_ID = kundenbestellung.Auftrag_ID
+
+
+JOIN artikel ON artikel.Artikel_ID = artikel_Kundenbestellung.Artikel_ID
+
 
 ORDER BY kundenbestellung.Auftrag_ID ASC;
 
@@ -73,7 +79,7 @@ SELECT kunde.Kunde_ID, kunde.Name, kunde.Vorname FROM kunde WHERE kunde.Kunde_ID
 	
 	(SELECT kundenbestellung.Kunde_ID FROM kundenbestellung WHERE kundenbestellung.Auftrag_ID IN 
 		
-		(SELECT artikel.Auftrag_ID FROM artikel WHERE artikel.Artikel_ID IN 
+		(SELECT Artikel_Kundenbestellung.Auftrag_ID FROM artikel_kundenbestellung WHERE artikel_kundenbestellung.Artikel_ID IN  
 			
 			(SELECT produkt_artikel.Artikel_ID FROM produkt_artikel WHERE produkt_artikel.Produkt_ID IN 
 				
@@ -89,10 +95,9 @@ Welcher Kunde wird von wem beliefert?
 Select kunde.Kunde_id,kunde.Name, lieferant.Name From kunde 
 Join kundenbestellung 
 ON kunde.Kunde_ID = kundenbestellung.Kunde_ID 
-Join artikel
- ON kundenbestellung.Auftrag_ID = artikel.Auftrag_ID 
+Join artikel_kundenbestellung ON kundenbestellung.Auftrag_ID = artikel_kundenbestellung.Auftrag_ID 
 JOIN produkt_artikel 
-ON artikel.Artikel_ID = produkt_artikel.Artikel_ID 
+ON artikel_kundenbestellung.Artikel_ID = produkt_artikel.Artikel_ID 
 JOIN produkt 
 ON produkt_artikel.Produkt_ID = produkt.Produkt_ID 
 JOIN lieferant
