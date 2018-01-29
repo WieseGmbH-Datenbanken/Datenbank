@@ -79,7 +79,6 @@ CREATE TABLE `Kundenbestellung`
 	`Status` Bool,
 	`Kunde_ID` INTEGER,
 	`Mitarbeiter_ID` INTEGER,
-	`Artikel_ID` INTEGER,
 	PRIMARY KEY(`Auftrag_ID`),
 	FOREIGN KEY(`Kunde_ID`)
 		REFERENCES `Kunde`(`Kunde_ID`)
@@ -87,9 +86,6 @@ CREATE TABLE `Kundenbestellung`
 	FOREIGN KEY(`Mitarbeiter_ID`)
 		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT,
-	FOREIGN KEY(`Artikel_ID`)
-		REFERENCES `Artikel`(`Artikel_ID`)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -100,6 +96,20 @@ CREATE TABLE `Artikel`
 	`Beschreibung` Char(255),
 	`Verkaufspreis` Double,
 	PRIMARY KEY(`Artikel_ID`),
+)
+;
+
+CREATE TABLE `Artikel_Kundenbestellung`
+(
+	`Artikel_ID` INTEGER
+	`Auftrag_ID` INTEGER,
+	PRIMARY KEY(`Artikel_ID`,`Auftrag_ID`),
+	FOREIGN KEY(`Artikel_ID`)
+		REFERENCES `Artikel`(`Artikel_ID`)
+		ON DELETE RESTRICT ON UPDATE RESTRICT,
+	FOREIGN KEY(`Auftrag_ID`)
+		REFERENCES `Kundenbestellung`(`Auftrag_ID`)
+		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 

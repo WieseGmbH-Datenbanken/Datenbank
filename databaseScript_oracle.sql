@@ -74,15 +74,11 @@ CREATE TABLE Kundenbestellung
 	Status Bool NOT NULL,
 	Kunde_ID INTEGER NOT NULL,
 	Mitarbeiter_ID INTEGER NOT NULL,
-	Artikel_ID INTEGER NOT NULL,
 	PRIMARY KEY(Auftrag_ID),
 	FOREIGN KEY(Kunde_ID)
 		REFERENCES Kunde(Kunde_ID),
 	FOREIGN KEY(Mitarbeiter_ID)
 		REFERENCES Mitarbeiter(Mitarbeiter_ID),
-	FOREIGN KEY(Artikel_ID)
-		REFERENCES Artikel(Artikel_ID)
-
 )
 ;
 
@@ -93,6 +89,18 @@ CREATE TABLE Artikel
 	Beschreibung Char(255) NOT NULL,
 	Verkaufspreis Double NOT NULL,
 	PRIMARY KEY(Artikel_ID) NOT NULL,
+)
+;
+
+CREATE TABLE Artikel_Kundenbestellung
+(
+	Artikel_ID INTEGER NOT NULL,
+	Auftrag_ID INTEGER NOT NULL,
+	PRIMARY KEY(Artikel_ID) NOT NULL,
+	FOREIGN KEY(Artikel_ID)
+		REFERENCES Artikel(Artikel_ID),
+	FOREIGN KEY(Auftrag_ID)
+		REFERENCES Kundenbestellung(Auftrag_ID)
 )
 ;
 

@@ -78,7 +78,6 @@ CREATE TABLE Kundenbestellung
 	Status Bit NOT NULL,
 	Kunde_ID INTEGER NOT NULL,
 	Mitarbeiter_ID INTEGER NOT NULL,
-	Artikel_ID INTEGER NOT NULL,
 	PRIMARY KEY(Auftrag_ID),
 	FOREIGN KEY(Kunde_ID)
 		REFERENCES Kunde(Kunde_ID)
@@ -86,9 +85,6 @@ CREATE TABLE Kundenbestellung
 	FOREIGN KEY(Mitarbeiter_ID)
 		REFERENCES Mitarbeiter(Mitarbeiter_ID)
 		ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY(Artikel_ID)
-		REFERENCES Artikel(Artikel_ID)
-		ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
 
@@ -99,6 +95,20 @@ CREATE TABLE Artikel
 	Beschreibung Char(255) NOT NULL,
 	Verkaufspreis float NOT NULL,
 	PRIMARY KEY(Artikel_ID)
+)
+go
+
+CREATE TABLE Artikel_Kundenbestellung
+(
+	Artikel_ID INTEGER NOT NULL,
+	Auftrag_ID INTEGER NOT NULL,
+	PRIMARY KEY(Artikel_ID,Auftrag_ID),
+	FOREIGN KEY(Artikel_ID)
+		REFERENCES Artikel(Artikel_ID)
+		ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY(Auftrag_ID)
+		REFERENCES Kundenbestellung(Auftrag_ID)
+		ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
 
