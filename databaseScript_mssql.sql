@@ -7,6 +7,16 @@ CREATE TABLE Produktkategorie
 )
 go
 
+CREATE TABLE Adresse
+(
+	Adresse_ID INTEGER NOT NULL IDENTITY(1,1),
+	Strasse Char(255) NOT NULL,
+	PLZ Char(255) NOT NULL,
+	Ort Char(255) NOT NULL,
+	PRIMARY KEY(Adresse_ID)
+)
+go
+
 CREATE TABLE Kunde
 (
 	Kunde_ID INTEGER NOT NULL IDENTITY(1,1),
@@ -61,15 +71,6 @@ CREATE TABLE Lieferant
 )
 go
 
-CREATE TABLE Adresse
-(
-	Adresse_ID INTEGER NOT NULL IDENTITY(1,1),
-	Strasse Char(255) NOT NULL,
-	PLZ Char(255) NOT NULL,
-	Ort Char(255) NOT NULL,
-	PRIMARY KEY(Adresse_ID)
-)
-go
 
 CREATE TABLE Kundenbestellung
 (

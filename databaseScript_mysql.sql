@@ -7,6 +7,16 @@ CREATE TABLE `Produktkategorie`
 )
 ;
 
+CREATE TABLE `Adresse`
+(
+	`Adresse_ID` INTEGER AUTO_INCREMENT,
+	`Strasse` Char(255),
+	`PLZ` Char(255),
+	`Ort` Char(255),
+	PRIMARY KEY(`Adresse_ID`)
+)
+;
+
 CREATE TABLE `Kunde`
 (
 	`Kunde_ID` INTEGER AUTO_INCREMENT,
@@ -59,16 +69,6 @@ CREATE TABLE `Lieferant`
 	FOREIGN KEY(`Adresse_ID`),
 		REFERENCES `Adresse`(`Adresse_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT
-)
-;
-
-CREATE TABLE `Adresse`
-(
-	`Adresse_ID` INTEGER AUTO_INCREMENT,
-	`Strasse` Char(255),
-	`PLZ` Char(255),
-	`Ort` Char(255),
-	PRIMARY KEY(`Adresse_ID`)
 )
 ;
 

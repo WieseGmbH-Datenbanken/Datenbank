@@ -7,6 +7,16 @@ CREATE TABLE Produktkategorie
 )
 ;
 
+CREATE TABLE Adresse
+(
+	Adresse_ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY(START with 1 INCREMENT by 1),
+	Strasse Char(255) NOT NULL,
+	PLZ Char(255) NOT NULL,
+	Ort Char(255) NOT NULL,
+	PRIMARY KEY(Adresse_ID)
+)
+;
+
 CREATE TABLE Kunde
 (
 	Kunde_ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY(START with 1 INCREMENT by 1),
@@ -54,16 +64,6 @@ CREATE TABLE Lieferant
 		REFERENCES Mitarbeiter(Mitarbeiter_ID),
 	FOREIGN KEY (Adresse_ID)
 		REFERENCES Adresse(Adresse_ID)
-)
-;
-
-CREATE TABLE Adresse
-(
-	Adresse_ID INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY(START with 1 INCREMENT by 1),
-	Strasse Char(255) NOT NULL,
-	PLZ Char(255) NOT NULL,
-	Ort Char(255) NOT NULL,
-	PRIMARY KEY(Adresse_ID)
 )
 ;
 
