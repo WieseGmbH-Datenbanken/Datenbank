@@ -78,7 +78,7 @@ CREATE TABLE Kundenbestellung
 	FOREIGN KEY(Kunde_ID)
 		REFERENCES Kunde(Kunde_ID),
 	FOREIGN KEY(Mitarbeiter_ID)
-		REFERENCES Mitarbeiter(Mitarbeiter_ID),
+		REFERENCES Mitarbeiter(Mitarbeiter_ID)
 )
 ;
 
@@ -88,7 +88,7 @@ CREATE TABLE Artikel
 	Name Char(255) NOT NULL,
 	Beschreibung Char(255) NOT NULL,
 	Verkaufspreis Double NOT NULL,
-	PRIMARY KEY(Artikel_ID) NOT NULL,
+	PRIMARY KEY(Artikel_ID)
 )
 ;
 
