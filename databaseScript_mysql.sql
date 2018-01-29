@@ -16,7 +16,11 @@ CREATE TABLE `Kunde`
 	`Telefon` Char(255),
 	`Email` Char(255),
 	`Zahlungsart` Char(255),
-	PRIMARY KEY(`Kunde_ID`)	
+	`Adresse_ID` INTEGER,
+	PRIMARY KEY(`Kunde_ID`)	,
+	FOREIGN KEY(`Adresse_ID`),
+		REFERENCES `Adresse`(`Adresse_ID`)
+		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -25,13 +29,17 @@ CREATE TABLE `Mitarbeiter`
 	`Mitarbeiter_ID` INTEGER AUTO_INCREMENT,
 	`Funktion` Char(255),
 	`Anrede` Char(255),
-    `Name` Char(225),
+   	`Name` Char(225),
 	`Vorname` Char(255),
 	`Telefon` Char(255),
 	`Email` Char(255),
 	`Steuernummer` Int,
 	`Lohn` Double,
-	PRIMARY KEY(`Mitarbeiter_ID`)
+	`Adresse_ID` INTEGER,
+	PRIMARY KEY(`Mitarbeiter_ID`),
+	FOREIGN KEY(`Adresse_ID`),
+		REFERENCES `Adresse`(`Adresse_ID`)
+		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -43,9 +51,13 @@ CREATE TABLE `Lieferant`
 	`Email` Char(255),
 	`Steuernummer` Int,
 	`Mitarbeiter_ID` INTEGER,
+	`Adresse_ID` INTEGER,
 	PRIMARY KEY(`Lieferant_ID`),
 	FOREIGN KEY(`Mitarbeiter_ID`)
 		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
+		ON DELETE RESTRICT ON UPDATE RESTRICT
+	FOREIGN KEY(`Adresse_ID`),
+		REFERENCES `Adresse`(`Adresse_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
@@ -56,19 +68,7 @@ CREATE TABLE `Adresse`
 	`Strasse` Char(255),
 	`PLZ` Char(255),
 	`Ort` Char(255),
-	`Lieferant_ID` INTEGER NULL,
-	`Mitarbeiter_ID` INTEGER NULL,
-	`Kunde_ID` INTEGER NULL,
-	PRIMARY KEY(`Adresse_ID`),
-	FOREIGN KEY(`Mitarbeiter_ID`)
-		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
-	FOREIGN KEY(`Kunde_ID`)
-		REFERENCES `Kunde`(`Kunde_ID`)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
-	FOREIGN KEY(`Lieferant_ID`)
-		REFERENCES `Lieferant`(`Lieferant_ID`)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
+	PRIMARY KEY(`Adresse_ID`)
 )
 ;
 
@@ -79,12 +79,16 @@ CREATE TABLE `Kundenbestellung`
 	`Status` Bool,
 	`Kunde_ID` INTEGER,
 	`Mitarbeiter_ID` INTEGER,
+	`Artikel_ID` INTEGER,
 	PRIMARY KEY(`Auftrag_ID`),
 	FOREIGN KEY(`Kunde_ID`)
 		REFERENCES `Kunde`(`Kunde_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT,
 	FOREIGN KEY(`Mitarbeiter_ID`)
 		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
+		ON DELETE RESTRICT ON UPDATE RESTRICT,
+	FOREIGN KEY(`Artikel_ID`)
+		REFERENCES `Artikel`(`Artikel_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
@@ -95,11 +99,7 @@ CREATE TABLE `Artikel`
 	`Name` Char(255),
 	`Beschreibung` Char(255),
 	`Verkaufspreis` Double,
-	`Auftrag_ID` INTEGER,
 	PRIMARY KEY(`Artikel_ID`),
-	FOREIGN KEY(`Auftrag_ID`)
-		REFERENCES `Kundenbestellung`(`Auftrag_ID`)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
