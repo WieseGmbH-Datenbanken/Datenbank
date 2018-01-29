@@ -73,10 +73,10 @@ INSERT INTO produktkategorie VALUES('Karosserie', 'Teile für die Autokarosserie
 	`Steuernummer` Int,
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO lieferant VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , '1');
-INSERT INTO lieferant VALUES( 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , '1');
-INSERT INTO lieferant VALUES( 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , '2');
-INSERT INTO lieferant VALUES( 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 1652487 , '2');
+INSERT INTO lieferant VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1);
+INSERT INTO lieferant VALUES( 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , 1);
+INSERT INTO lieferant VALUES( 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , 2);
+INSERT INTO lieferant VALUES( 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 1652487 , 2);
 
 
 
@@ -90,32 +90,32 @@ INSERT INTO lieferant VALUES( 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 165
 	`Mitarbeiter_ID` Char(10) NULL,
 	`Kunde_ID` Char(10) NULL,)
 */
-INSERT INTO adresse VALUES( 'Königsstraße 21', '32427', 'Minden', NULL, '1', NULL);
-INSERT INTO adresse VALUES( 'Am Kolk', '32427', 'Minden', NULL, '2', NULL);
-INSERT INTO adresse VALUES( 'Atilleriestraße 4', '32427', 'Minden', NULL, '3', NULL);
-INSERT INTO adresse VALUES( 'Hohenstaufenring 22', '32427', 'Minden', NULL, '4', NULL);
-INSERT INTO adresse VALUES( 'Bismarckstraße 5', '32427', 'Minden', NULL, '5', NULL);
-INSERT INTO adresse VALUES( 'Ringstraße 9', '32427', 'Minden', '1', NULL, NULL);
-INSERT INTO adresse VALUES( 'Berliner Ring 2', '38440', 'Wolfsburg', '2', NULL, NULL);
-INSERT INTO adresse VALUES( 'An der Stadtmühle 2', '32423', 'Minden', '3', NULL, NULL);
-INSERT INTO adresse VALUES( 'Musterstraße 9', '50529', 'Pulheim', NULL, NULL, '1');
-INSERT INTO adresse VALUES( 'Napoleonstraße 2', '31749', 'Auetal', NULL, NULL, '2');
-INSERT INTO adresse VALUES( 'Westerholz 10', '31749', 'Auetal', NULL, NULL, '3');
-INSERT INTO adresse VALUES( 'Rahdener Straße 11', '32339', 'Lübbecke', NULL, NULL, '4');
-INSERT INTO adresse VALUES( 'Hahler Straße 4', '32427', 'Minden', NULL, NULL, '5');
-INSERT INTO adresse VALUES( 'Bergstraße 7', '85221', 'Dachau', '4', NULL, NULL);
-INSERT INTO adresse VALUES( 'Königsstraße 23', '32427', 'Minden', NULL, '6', NULL);
-INSERT INTO adresse VALUES( 'Hahler Straße 21', '32427', 'Minden', NULL, '7', NULL);
-INSERT INTO adresse VALUES( 'Königswall 2', '32427', 'Minden', NULL, '8', NULL);
-INSERT INTO adresse VALUES( 'Hohenzollernring 21', '32427', 'Minden', NULL, '9', NULL);
-INSERT INTO adresse VALUES( 'Portastraße 1', '32427', 'Minden', NULL, '10', NULL);
-INSERT INTO adresse VALUES( 'Bärenburger Straße 34', '31749', 'Auetal', NULL, NULL, '5');
-INSERT INTO adresse VALUES( 'Hahler Straße 6', '32427', 'Minden', NULL, NULL, '6');
-INSERT INTO adresse VALUES( 'Bismarckstraße 30', '32427', 'Minden', NULL, NULL, '7');
-INSERT INTO adresse VALUES( 'Petersstraße 2', '10585', 'Berlin', NULL, NULL, '8');
-INSERT INTO adresse VALUES( 'Weizstraße 26', '10707', 'Berlin', NULL, NULL, '9');
-INSERT INTO adresse VALUES( 'Besenstraße 13', '38440', 'Wolfsburg', NULL, NULL, '10');
-INSERT INTO adresse VALUES( 'Napoleonstraße 23', '31749', 'Auetal', NULL, NULL, '11');
+INSERT INTO adresse VALUES( 'Königsstraße 21', '32427', 'Minden', NULL, 1, NULL);
+INSERT INTO adresse VALUES( 'Am Kolk', '32427', 'Minden', NULL, 2, NULL);
+INSERT INTO adresse VALUES( 'Atilleriestraße 4', '32427', 'Minden', NULL, 3, NULL);
+INSERT INTO adresse VALUES( 'Hohenstaufenring 22', '32427', 'Minden', NULL, 4, NULL);
+INSERT INTO adresse VALUES( 'Bismarckstraße 5', '32427', 'Minden', NULL, 5, NULL);
+INSERT INTO adresse VALUES( 'Ringstraße 9', '32427', 'Minden', 1, NULL, NULL);
+INSERT INTO adresse VALUES( 'Berliner Ring 2', '38440', 'Wolfsburg', 2, NULL, NULL);
+INSERT INTO adresse VALUES( 'An der Stadtmühle 2', '32423', 'Minden', 3, NULL, NULL);
+INSERT INTO adresse VALUES( 'Musterstraße 9', '50529', 'Pulheim', NULL, NULL, 1);
+INSERT INTO adresse VALUES( 'Napoleonstraße 2', '31749', 'Auetal', NULL, NULL, 2);
+INSERT INTO adresse VALUES( 'Westerholz 10', '31749', 'Auetal', NULL, NULL, 3);
+INSERT INTO adresse VALUES( 'Rahdener Straße 11', '32339', 'Lübbecke', NULL, NULL, 4);
+INSERT INTO adresse VALUES( 'Hahler Straße 4', '32427', 'Minden', NULL, NULL, 5);
+INSERT INTO adresse VALUES( 'Bergstraße 7', '85221', 'Dachau', 4, NULL, NULL);
+INSERT INTO adresse VALUES( 'Königsstraße 23', '32427', 'Minden', NULL, 6, NULL);
+INSERT INTO adresse VALUES( 'Hahler Straße 21', '32427', 'Minden', NULL, 7, NULL);
+INSERT INTO adresse VALUES( 'Königswall 2', '32427', 'Minden', NULL, 8, NULL);
+INSERT INTO adresse VALUES( 'Hohenzollernring 21', '32427', 'Minden', NULL, 9, NULL);
+INSERT INTO adresse VALUES( 'Portastraße 1', '32427', 'Minden', NULL, 10, NULL);
+INSERT INTO adresse VALUES( 'Bärenburger Straße 34', '31749', 'Auetal', NULL, NULL, 5);
+INSERT INTO adresse VALUES( 'Hahler Straße 6', '32427', 'Minden', NULL, NULL, 6);
+INSERT INTO adresse VALUES( 'Bismarckstraße 30', '32427', 'Minden', NULL, NULL, 7);
+INSERT INTO adresse VALUES( 'Petersstraße 2', '10585', 'Berlin', NULL, NULL, 8);
+INSERT INTO adresse VALUES( 'Weizstraße 26', '10707', 'Berlin', NULL, NULL, 9);
+INSERT INTO adresse VALUES( 'Besenstraße 13', '38440', 'Wolfsburg', NULL, NULL, 10);
+INSERT INTO adresse VALUES( 'Napoleonstraße 23', '31749', 'Auetal', NULL, NULL, 11);
 
 
 /*
@@ -126,15 +126,15 @@ INSERT INTO adresse VALUES( 'Napoleonstraße 23', '31749', 'Auetal', NULL, NULL,
 	`Kunde_ID` Char(10),
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO kundenbestellung VALUES('1', STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, '1', '1');
-INSERT INTO kundenbestellung VALUES('2', STR_TO_DATE('1/10/2018 10:53:26 AM', '%c/%e/%Y %r'), true, '2', '2');
-INSERT INTO kundenbestellung VALUES('3', STR_TO_DATE('1/15/2018 11:06:26 AM', '%c/%e/%Y %r'), true, '3', '2');
-INSERT INTO kundenbestellung VALUES('4', STR_TO_DATE('1/20/2018 7:46:48 AM', '%c/%e/%Y %r'), false, '3', '2');
-INSERT INTO kundenbestellung VALUES('5', STR_TO_DATE('1/23/2018 16:46:36 PM', '%c/%e/%Y %r'), true, '5', '1');
-INSERT INTO kundenbestellung VALUES('6', STR_TO_DATE('1/23/2018 18:46:36 PM', '%c/%e/%Y %r'), false, '4', '1');
-INSERT INTO kundenbestellung VALUES('7', STR_TO_DATE('1/24/2018 18:48:36 PM', '%c/%e/%Y %r'), false, '6', '8');
-INSERT INTO kundenbestellung VALUES('8', STR_TO_DATE('1/26/2018 19:46:36 PM', '%c/%e/%Y %r'), false, '7', '9');
-INSERT INTO kundenbestellung VALUES('9', STR_TO_DATE('1/29/2018 17:42:36 PM', '%c/%e/%Y %r'), false, '8', '1');
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, 1, 1);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/10/2018 10:53:26 AM', '%c/%e/%Y %r'), true, 2, 2);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/15/2018 11:06:26 AM', '%c/%e/%Y %r'), true, 3, 2);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/20/2018 7:46:48 AM', '%c/%e/%Y %r'), false, 3, 2);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/23/2018 16:46:36 PM', '%c/%e/%Y %r'), true, 5, 1);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/23/2018 18:46:36 PM', '%c/%e/%Y %r'), false, 4, 1);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/24/2018 18:48:36 PM', '%c/%e/%Y %r'), false, 6, 8);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/26/2018 19:46:36 PM', '%c/%e/%Y %r'), false, 7, 9);
+INSERT INTO kundenbestellung VALUES( STR_TO_DATE('1/29/2018 17:42:36 PM', '%c/%e/%Y %r'), false, 8, 7);
 
 /*
 	INSERT für die Tabelle Artikel
@@ -144,15 +144,15 @@ INSERT INTO kundenbestellung VALUES('9', STR_TO_DATE('1/29/2018 17:42:36 PM', '%
 	`Verkaufspreis` Double,
 	`Auftrag_ID` Char(10),)
 */
-INSERT INTO artikel VALUES('1', 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480, '1');
-INSERT INTO artikel VALUES('2', 'Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480, '2');
-INSERT INTO artikel VALUES('3', '2er Set Bremsen', 'Ein Set aus 2 Bremsscheiben und Bremsbeläge, Innenbelüftet', 300, '3');
-INSERT INTO artikel VALUES('4', '4er Set Bremsen', 'Ein Set aus 4 Bremsscheiben und Bremsbeläge ', 600, '4');
-INSERT INTO artikel VALUES('5', 'Kenwood Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion', 80, '5');
-INSERT INTO artikel VALUES('6', 'Sportliche Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Polo und Golf', 70, '6');
-INSERT INTO artikel VALUES('7', 'Leistungsstarke Autobatterie', 'Hält länger als andere Batterien!', 50, '7');
-INSERT INTO artikel VALUES('8', 'Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100, '8');
-INSERT INTO artikel VALUES('9', 'Heckverkleidung', 'Heckverkleidung für VW Polo', 120, '9');
+INSERT INTO artikel VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480, 1);
+INSERT INTO artikel VALUES( 'Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480, 2);
+INSERT INTO artikel VALUES( '2er Set Bremsen', 'Ein Set aus 2 Bremsscheiben und Bremsbeläge, Innenbelüftet', 300, 3);
+INSERT INTO artikel VALUES( '4er Set Bremsen', 'Ein Set aus 4 Bremsscheiben und Bremsbeläge ', 600, 4);
+INSERT INTO artikel VALUES( 'Kenwood Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion', 80, 5);
+INSERT INTO artikel VALUES( 'Sportliche Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Polo und Golf', 70, 6);
+INSERT INTO artikel VALUES( 'Leistungsstarke Autobatterie', 'Hält länger als andere Batterien!', 50, 7);
+INSERT INTO artikel VALUES( 'Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100, 8);
+INSERT INTO artikel VALUES( 'Heckverkleidung', 'Heckverkleidung für VW Polo', 120, 9);
 
 
 /*
@@ -165,15 +165,15 @@ INSERT INTO artikel VALUES('9', 'Heckverkleidung', 'Heckverkleidung für VW Polo
 	`Kategorie_ID` Char(10),
 	`Lieferant_ID` Char(10),)
 */
-INSERT INTO produkt VALUES('1', 'Michelin Sommerreifen', 120, 1589, 1000, '1', '1');
-INSERT INTO produkt VALUES('2', 'Kenwood Radio', 80, 1000, 800, '4', '4');
-INSERT INTO produkt VALUES('3', 'Walser Autositzbezug', 70, 800, 890, '5', '2');
-INSERT INTO produkt VALUES('4', 'Purework Auto-Gummimatten', 30, 800, 803, '6', '3');
-INSERT INTO produkt VALUES('5', 'Michelin Winterreifen', 120, 1402, 1000, '2', '1');
-INSERT INTO produkt VALUES('6', 'Bremsscheiben und Beläge', 150, 1203, 900, '2', '1');
-INSERT INTO produkt VALUES('7', 'Autobatterie', 50, 500, 300, '8', '1');
-INSERT INTO produkt VALUES('8', 'Katalysator', 100, 600, 700, '7', '2');
-INSERT INTO produkt VALUES('9', 'Heckverkleidung', 120, 550, 500, '9', '3');
+INSERT INTO produkt VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1);
+INSERT INTO produkt VALUES( 'Kenwood Radio', 80, 1000, 800, 4, 4);
+INSERT INTO produkt VALUES( 'Walser Autositzbezug', 70, 800, 890, 5, 2);
+INSERT INTO produkt VALUES( 'Purework Auto-Gummimatten', 30, 800, 803, 6, 3);
+INSERT INTO produkt VALUES( 'Michelin Winterreifen', 120, 1402, 1000, 2, 1);
+INSERT INTO produkt VALUES( 'Bremsscheiben und Beläge', 150, 1203, 900, 2, 1);
+INSERT INTO produkt VALUES( 'Autobatterie', 50, 500, 300, 8, 1);
+INSERT INTO produkt VALUES( 'Katalysator', 100, 600, 700, 7, 2);
+INSERT INTO produkt VALUES( 'Heckverkleidung', 120, 550, 500, 9, 3);
 
 
 
@@ -183,15 +183,15 @@ INSERT INTO produkt VALUES('9', 'Heckverkleidung', 120, 550, 500, '9', '3');
     Values(`Produkt_ID` Char(10),
 	`Artikel_ID` Char(10),)
 */
-INSERT INTO produkt_artikel VALUES('1', '1');
-INSERT INTO produkt_artikel VALUES('5', '2');
-INSERT INTO produkt_artikel VALUES('6', '3');
-INSERT INTO produkt_artikel VALUES('6', '4');
-INSERT INTO produkt_artikel VALUES('2', '5');
-INSERT INTO produkt_artikel VALUES('3', '6');
-INSERT INTO produkt_artikel VALUES('7', '7');
-INSERT INTO produkt_artikel VALUES('8', '8');
-INSERT INTO produkt_artikel VALUES('9', '9');
+INSERT INTO produkt_artikel VALUES(1, 1);
+INSERT INTO produkt_artikel VALUES(5, 2);
+INSERT INTO produkt_artikel VALUES(6, 3);
+INSERT INTO produkt_artikel VALUES(6, 4);
+INSERT INTO produkt_artikel VALUES(2, 5);
+INSERT INTO produkt_artikel VALUES(3, 6);
+INSERT INTO produkt_artikel VALUES(7, 7);
+INSERT INTO produkt_artikel VALUES(8, 8);
+INSERT INTO produkt_artikel VALUES(9, 9);
 
 
 /*
@@ -201,14 +201,14 @@ INSERT INTO produkt_artikel VALUES('9', '9');
 	`Status` Bool,
 	`Lieferant_ID` Char(10),)
 */
-INSERT INTO lieferantenbestellung VALUES('1', STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), false, '1');
-INSERT INTO lieferantenbestellung VALUES('2', STR_TO_DATE('1/12/2018 12:16:26 PM', '%c/%e/%Y %r'), false, '4');
-INSERT INTO lieferantenbestellung VALUES('3', STR_TO_DATE('1/15/2018 14:56:25 PM', '%c/%e/%Y %r'), false, '2');
-INSERT INTO lieferantenbestellung VALUES('4', STR_TO_DATE('1/20/2018 11:26:46 AM', '%c/%e/%Y %r'), false, '3');
-INSERT INTO lieferantenbestellung VALUES('5', STR_TO_DATE('1/23/2018 08:44:23 AM', '%c/%e/%Y %r'), false, '2');
-INSERT INTO lieferantenbestellung VALUES('6', STR_TO_DATE('1/25/2018 17:42:20 PM', '%c/%e/%Y %r'), false, '1');
-INSERT INTO lieferantenbestellung VALUES('7', STR_TO_DATE('1/27/2018 07:30:15 AM', '%c/%e/%Y %r'), false, '2');
-INSERT INTO lieferantenbestellung VALUES('8', STR_TO_DATE('1/29/2018 15:23:58 PM', '%c/%e/%Y %r'), false, '3');
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), true, 1);
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/12/2018 12:16:26 PM', '%c/%e/%Y %r'), false, 4);
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/15/2018 14:56:25 PM', '%c/%e/%Y %r'), true, 2);
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/20/2018 11:26:46 AM', '%c/%e/%Y %r'), false, 3);
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/23/2018 08:44:23 AM', '%c/%e/%Y %r'), true, 2);
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/25/2018 17:42:20 PM', '%c/%e/%Y %r'), true, 1);
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/27/2018 07:30:15 AM', '%c/%e/%Y %r'), false, 2);
+INSERT INTO lieferantenbestellung VALUES( STR_TO_DATE('1/29/2018 15:23:58 PM', '%c/%e/%Y %r'), false, 3);
 
 
 
@@ -219,13 +219,13 @@ INSERT INTO lieferantenbestellung VALUES('8', STR_TO_DATE('1/29/2018 15:23:58 PM
     Values(`LAuftrag_ID` Char(10),	
 	`Produkt_ID` Char(10),)
 */
-INSERT INTO lieferantenbestellung_produkt VALUES('1', '1');
-INSERT INTO lieferantenbestellung_produkt VALUES('2', '2');
-INSERT INTO lieferantenbestellung_produkt VALUES('3', '3');
-INSERT INTO lieferantenbestellung_produkt VALUES('4', '4');
-INSERT INTO lieferantenbestellung_produkt VALUES('5', '5');
-INSERT INTO lieferantenbestellung_produkt VALUES('6', '7');
-INSERT INTO lieferantenbestellung_produkt VALUES('7', '8');
-INSERT INTO lieferantenbestellung_produkt VALUES('8', '9');
+INSERT INTO lieferantenbestellung_produkt VALUES(1, 1);
+INSERT INTO lieferantenbestellung_produkt VALUES(2, 2);
+INSERT INTO lieferantenbestellung_produkt VALUES(3, 3);
+INSERT INTO lieferantenbestellung_produkt VALUES(4, 4);
+INSERT INTO lieferantenbestellung_produkt VALUES(5, 5);
+INSERT INTO lieferantenbestellung_produkt VALUES(6, 7);
+INSERT INTO lieferantenbestellung_produkt VALUES(7, 8);
+INSERT INTO lieferantenbestellung_produkt VALUES(8, 9);
 
 
