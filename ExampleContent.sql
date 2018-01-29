@@ -109,26 +109,13 @@ INSERT INTO adresse VALUES( 'Hahler Straße 21', '32427', 'Minden', NULL, '7', N
 INSERT INTO adresse VALUES( 'Königswall 2', '32427', 'Minden', NULL, '8', NULL);
 INSERT INTO adresse VALUES( 'Hohenzollernring 21', '32427', 'Minden', NULL, '9', NULL);
 INSERT INTO adresse VALUES( 'Portastraße 1', '32427', 'Minden', NULL, '10', NULL);
-INSERT INTO adresse VALUES('1', 'Königsstraße 21', '32427', 'Minden', NULL, '1', NULL);
-INSERT INTO adresse VALUES('2', 'Am Kolk', '32427', 'Minden', NULL, '2', NULL);
-INSERT INTO adresse VALUES('3', 'Atilleriestraße 4', '32427', 'Minden', NULL, '3', NULL);
-INSERT INTO adresse VALUES('4', 'Hohenstaufenring 22', '32427', 'Minden', NULL, '4', NULL);
-INSERT INTO adresse VALUES('5', 'Bismarckstraße 5', '32427', 'Minden', NULL, '5', NULL);
-INSERT INTO adresse VALUES('6', 'Ringstraße 9', '32427', 'Minden', '1', NULL, NULL);
-INSERT INTO adresse VALUES('7', 'Berliner Ring 2', '38440', 'Wolfsburg', '2', NULL, NULL);
-INSERT INTO adresse VALUES('8', 'An der Stadtmühle 2', '32423', 'Minden', '3', NULL, NULL);
-INSERT INTO adresse VALUES('13', 'Bergstraße 7', '85221', 'Dachau', '4', NULL, NULL);
-INSERT INTO adresse VALUES('9', 'Musterstraße 9', '50529', 'Pulheim', NULL, NULL, '1');
-INSERT INTO adresse VALUES('10', 'Napoleonstraße 2', '31749', 'Auetal', NULL, NULL, '2');
-INSERT INTO adresse VALUES('11', 'Westerholz 10', '31749', 'Auetal', NULL, NULL, '3');
-INSERT INTO adresse VALUES('12', 'Rahdener Straße 11', '32339', 'Lübbecke', NULL, NULL, '4');
-INSERT INTO adresse VALUES('13', 'Bärenburger Straße 34', '31749', 'Auetal', NULL, NULL, '5');
-INSERT INTO adresse VALUES('14', 'Hahler Straße 6', '32427', 'Minden', NULL, NULL, '6');
-INSERT INTO adresse VALUES('15', 'Bismarckstraße 30', '32427', 'Minden', NULL, NULL, '7');
-INSERT INTO adresse VALUES('16', 'Petersstraße 2', '10585', 'Berlin', NULL, NULL, '8');
-INSERT INTO adresse VALUES('17', 'Weizstraße 26', '10707', 'Berlin', NULL, NULL, '9');
-INSERT INTO adresse VALUES('18', 'Besenstraße 13', '38440', 'Wolfsburg', NULL, NULL, '10');
-INSERT INTO adresse VALUES('19', 'Napoleonstraße 23', '31749', 'Auetal', NULL, NULL, '11');
+INSERT INTO adresse VALUES( 'Bärenburger Straße 34', '31749', 'Auetal', NULL, NULL, '5');
+INSERT INTO adresse VALUES( 'Hahler Straße 6', '32427', 'Minden', NULL, NULL, '6');
+INSERT INTO adresse VALUES( 'Bismarckstraße 30', '32427', 'Minden', NULL, NULL, '7');
+INSERT INTO adresse VALUES( 'Petersstraße 2', '10585', 'Berlin', NULL, NULL, '8');
+INSERT INTO adresse VALUES( 'Weizstraße 26', '10707', 'Berlin', NULL, NULL, '9');
+INSERT INTO adresse VALUES( 'Besenstraße 13', '38440', 'Wolfsburg', NULL, NULL, '10');
+INSERT INTO adresse VALUES( 'Napoleonstraße 23', '31749', 'Auetal', NULL, NULL, '11');
 
 
 /*
