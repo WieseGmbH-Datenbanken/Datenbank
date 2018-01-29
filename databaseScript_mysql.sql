@@ -72,11 +72,6 @@ CREATE TABLE `Lieferant`
 )
 ;
 
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 CREATE TABLE `Kundenbestellung`
 (
 	`Auftrag_ID` INTEGER AUTO_INCREMENT,

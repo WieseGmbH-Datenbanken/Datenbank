@@ -1,4 +1,43 @@
 /*
+	Insert für die Tabelle Adresse
+	Values(`Adresse_ID` Char(10),
+	`Strasse` Char(255),
+	`PLZ` Char(255),
+	`Ort` Char(255),
+	`Lieferant_ID` Char(10) NULL,
+	`Mitarbeiter_ID` Char(10) NULL,
+	`Kunde_ID` Char(10) NULL,)
+*/
+INSERT INTO adresse (Strasse, PLZ, Ort)
+VALUES( 'Königsstraße 21', '32427', 'Minden'),
+( 'Am Kolk', '32427', 'Minden'),
+( 'Atilleriestraße 4', '32427', 'Minden'),
+( 'Hohenstaufenring 22', '32427', 'Minden'),
+( 'Bismarckstraße 5', '32427', 'Minden'),
+( 'Ringstraße 9', '32427', 'Minden'),
+( 'Berliner Ring 2', '38440', 'Wolfsburg'),
+( 'An der Stadtmühle 2', '32423', 'Minden'),
+( 'Musterstraße 9', '50529', 'Pulheim'),
+( 'Napoleonstraße 2', '31749', 'Auetal'),
+( 'Westerholz 10', '31749', 'Auetal'),
+( 'Rahdener Straße 11', '32339', 'Lübbecke'),
+( 'Hahler Straße 4', '32427', 'Minden'),
+( 'Bergstraße 7', '85221', 'Dachau'),
+( 'Königsstraße 23', '32427', 'Minden'),
+( 'Hahler Straße 21', '32427', 'Minden'),
+( 'Königswall 2', '32427', 'Minden'),
+( 'Hohenzollernring 21', '32427', 'Minden'),
+( 'Portastraße 1', '32427', 'Minden'),
+( 'Bärenburger Straße 34', '31749', 'Auetal'),
+( 'Hahler Straße 6', '32427', 'Minden'),
+( 'Bismarckstraße 30', '32427', 'Minden'),
+( 'Petersstraße 2', '10585', 'Berlin'),
+( 'Weizstraße 26', '10707', 'Berlin'),
+( 'Besenstraße 13', '38440', 'Wolfsburg'),
+( 'Napoleonstraße 23', '31749', 'Auetal');
+
+
+/*
 	INSERT für die Tabelle Mitarbeiter 
     Values(`Mitarbeiter_ID` Char(10),
 	`Funktion` Char(255),
@@ -82,45 +121,6 @@ VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1, 6),
 ( 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , 2, 8),
 ( 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 1652487 , 2, 14);
 
-
-
-/*
-	Insert für die Tabelle Adresse
-	Values(`Adresse_ID` Char(10),
-	`Strasse` Char(255),
-	`PLZ` Char(255),
-	`Ort` Char(255),
-	`Lieferant_ID` Char(10) NULL,
-	`Mitarbeiter_ID` Char(10) NULL,
-	`Kunde_ID` Char(10) NULL,)
-*/
-INSERT INTO adresse (Strasse, PLZ, Ort)
-VALUES( 'Königsstraße 21', '32427', 'Minden'),
-( 'Am Kolk', '32427', 'Minden'),
-( 'Atilleriestraße 4', '32427', 'Minden'),
-( 'Hohenstaufenring 22', '32427', 'Minden'),
-( 'Bismarckstraße 5', '32427', 'Minden'),
-( 'Ringstraße 9', '32427', 'Minden'),
-( 'Berliner Ring 2', '38440', 'Wolfsburg'),
-( 'An der Stadtmühle 2', '32423', 'Minden'),
-( 'Musterstraße 9', '50529', 'Pulheim'),
-( 'Napoleonstraße 2', '31749', 'Auetal'),
-( 'Westerholz 10', '31749', 'Auetal'),
-( 'Rahdener Straße 11', '32339', 'Lübbecke'),
-( 'Hahler Straße 4', '32427', 'Minden'),
-( 'Bergstraße 7', '85221', 'Dachau'),
-( 'Königsstraße 23', '32427', 'Minden'),
-( 'Hahler Straße 21', '32427', 'Minden'),
-( 'Königswall 2', '32427', 'Minden'),
-( 'Hohenzollernring 21', '32427', 'Minden'),
-( 'Portastraße 1', '32427', 'Minden'),
-( 'Bärenburger Straße 34', '31749', 'Auetal'),
-( 'Hahler Straße 6', '32427', 'Minden'),
-( 'Bismarckstraße 30', '32427', 'Minden'),
-( 'Petersstraße 2', '10585', 'Berlin'),
-( 'Weizstraße 26', '10707', 'Berlin'),
-( 'Besenstraße 13', '38440', 'Wolfsburg'),
-( 'Napoleonstraße 23', '31749', 'Auetal');
 
 
 /*
