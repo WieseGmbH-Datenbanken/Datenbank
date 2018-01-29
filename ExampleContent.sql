@@ -28,11 +28,17 @@ INSERT INTO mitarbeiter VALUES('5', 'Finanzmanager', 'Frau', 'Manns', 'Olivia', 
 	`Email` Char(255),
 	`Zahlungsart` Char(255),)
 */
-INSERT INTO kunde VALUES('1', 'Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal');
-INSERT INTO kunde VALUES('2', 'Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal');
-INSERT INTO kunde VALUES('3', 'Herr', 'Klaas', 'Oliver', '1893 741852', 'KOliver@google.de', 'PayPal');
-INSERT INTO kunde VALUES('4', 'Frau', 'Kerze', 'Hannah', '0175 8426597', 'HannahK@yahoo.de', 'PayPal');
-INSERT INTO kunde VALUES('5', 'Frau', 'Waal', 'Andrea', '1789 7589641', 'AWaal@gmx.de', 'PayPal');
+INSERT INTO kunde VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal');
+INSERT INTO kunde VALUES('Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal');
+INSERT INTO kunde VALUES('Herr', 'Klaas', 'Oliver', '1893 741852', 'KOliver@google.de', 'Direktüberweisung');
+INSERT INTO kunde VALUES('Frau', 'Kerze', 'Hannah', '0175 8426597', 'HannahK@yahoo.de', 'PayPal');
+INSERT INTO kunde VALUES('Frau', 'Waal', 'Andrea', '1789 7589641', 'AWaal@gmx.de', 'PayPal');
+INSERT INTO kunde VALUES('Frau', 'Heinrich', 'Lisa', '0176 3234623', 'LHeinrich@gmx.de', 'Lastschrift');
+INSERT INTO kunde VALUES('Herr', 'Schulz', 'Axel', '1789 4352346', 'ASchulz@web.de', 'Direktüberweisung');
+INSERT INTO kunde VALUES('Herr', 'Wagner', 'Carsten', '1789 424757', 'CWagner@yahoo.de', 'Paypal');
+INSERT INTO kunde VALUES('Frau', 'Wiese', 'Margaret', '1789 2196446', 'MargaretWiese@gmx.de', 'PayPal');
+INSERT INTO kunde VALUES('Herr', 'Lingsch', 'Horst', '0571 7589644', 'HorstLingsch@web.de', 'Lastschrift');
+INSERT INTO kunde VALUES('Herr', 'Köller', 'Andreas', '0571 5977469', 'AKöller@gmx.de', 'PayPal');
 
 
 /*
@@ -79,16 +85,23 @@ INSERT INTO adresse VALUES('1', 'Königsstraße 21', '32427', 'Minden', NULL, '1
 INSERT INTO adresse VALUES('2', 'Am Kolk', '32427', 'Minden', NULL, '2', NULL);
 INSERT INTO adresse VALUES('3', 'Atilleriestraße 4', '32427', 'Minden', NULL, '3', NULL);
 INSERT INTO adresse VALUES('4', 'Hohenstaufenring 22', '32427', 'Minden', NULL, '4', NULL);
-INSERT INTO adresse VALUES('5', 'Bismarckstarße 5', '32427', 'Minden', NULL, '5', NULL);
+INSERT INTO adresse VALUES('5', 'Bismarckstraße 5', '32427', 'Minden', NULL, '5', NULL);
 INSERT INTO adresse VALUES('6', 'Ringstraße 9', '32427', 'Minden', '1', NULL, NULL);
 INSERT INTO adresse VALUES('7', 'Berliner Ring 2', '38440', 'Wolfsburg', '2', NULL, NULL);
 INSERT INTO adresse VALUES('8', 'An der Stadtmühle 2', '32423', 'Minden', '3', NULL, NULL);
+INSERT INTO adresse VALUES('13', 'Bergstraße 7', '85221', 'Dachau', '4', NULL, NULL);
 INSERT INTO adresse VALUES('9', 'Musterstraße 9', '50529', 'Pulheim', NULL, NULL, '1');
 INSERT INTO adresse VALUES('10', 'Napoleonstraße 2', '31749', 'Auetal', NULL, NULL, '2');
 INSERT INTO adresse VALUES('11', 'Westerholz 10', '31749', 'Auetal', NULL, NULL, '3');
 INSERT INTO adresse VALUES('12', 'Rahdener Straße 11', '32339', 'Lübbecke', NULL, NULL, '4');
-INSERT INTO adresse VALUES('13', 'Hahler Straße 4', '32427', 'Minden', NULL, NULL, '5');
-INSERT INTO adresse VALUES('13', 'Bergstraße 7', '85221', 'Dachau', '3', NULL, NULL);
+INSERT INTO adresse VALUES('13', 'Bärenburger Straße 34', '31749', 'Auetal', NULL, NULL, '5');
+INSERT INTO adresse VALUES('14', 'Hahler Straße 6', '32427', 'Minden', NULL, NULL, '6');
+INSERT INTO adresse VALUES('15', 'Bismarckstraße 30', '32427', 'Minden', NULL, NULL, '7');
+INSERT INTO adresse VALUES('16', 'Petersstraße 2', '10585', 'Berlin', NULL, NULL, '8');
+INSERT INTO adresse VALUES('17', 'Weizstraße 26', '10707', 'Berlin', NULL, NULL, '9');
+INSERT INTO adresse VALUES('18', 'Besenstraße 13', '38440', 'Wolfsburg', NULL, NULL, '10');
+INSERT INTO adresse VALUES('19', 'Napoleonstraße 23', '31749', 'Auetal', NULL, NULL, '11');
+
 
 /*
 	INSERT für die Tabelle Kundenbestellung
