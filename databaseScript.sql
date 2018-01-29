@@ -1,6 +1,6 @@
 CREATE TABLE `Produktkategorie`
 (
-	`Kategorie_ID` Char(10),
+	`Kategorie_ID` INTEGER AUTO_INCREMENT,
 	`Kategorie` Char(255),
 	`Beschreibung` Char(255),
 	PRIMARY KEY(`Kategorie_ID`)
@@ -9,7 +9,7 @@ CREATE TABLE `Produktkategorie`
 
 CREATE TABLE `Kunde`
 (
-	`Kunde_ID` Char(10),
+	`Kunde_ID` INTEGER AUTO_INCREMENT,
 	`Anrede` Char(255),
 	`Name` Char(255),
 	`Vorname` Char(255),
@@ -22,10 +22,9 @@ CREATE TABLE `Kunde`
 
 CREATE TABLE `Mitarbeiter`
 (
-	`Mitarbeiter_ID` Char(10),
+	`Mitarbeiter_ID` INTEGER AUTO_INCREMENT,
 	`Funktion` Char(255),
 	`Anrede` Char(255),
-    `Name` Char(225),
 	`Vorname` Char(255),
 	`Telefon` Char(255),
 	`Email` Char(255),
@@ -37,12 +36,12 @@ CREATE TABLE `Mitarbeiter`
 
 CREATE TABLE `Lieferant`
 (
-	`Lieferant_ID` Char(10),
+	`Lieferant_ID` INTEGER AUTO_INCREMENT,
 	`Name` Char(255),
 	`Telefon` Char(255),
 	`Email` Char(255),
 	`Steuernummer` Int,
-	`Mitarbeiter_ID` Char(10),
+	`Mitarbeiter_ID` INTEGER,
 	PRIMARY KEY(`Lieferant_ID`),
 	FOREIGN KEY(`Mitarbeiter_ID`)
 		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
@@ -52,13 +51,13 @@ CREATE TABLE `Lieferant`
 
 CREATE TABLE `Adresse`
 (
-	`Adresse_ID` Char(10),
+	`Adresse_ID` INTEGER AUTO_INCREMENT,
 	`Strasse` Char(255),
 	`PLZ` Char(255),
 	`Ort` Char(255),
-	`Lieferant_ID` Char(10) NULL,
-	`Mitarbeiter_ID` Char(10) NULL,
-	`Kunde_ID` Char(10) NULL,
+	`Lieferant_ID` INTEGER NULL,
+	`Mitarbeiter_ID` INTEGER NULL,
+	`Kunde_ID` INTEGER NULL,
 	PRIMARY KEY(`Adresse_ID`),
 	FOREIGN KEY(`Mitarbeiter_ID`)
 		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
@@ -74,11 +73,11 @@ CREATE TABLE `Adresse`
 
 CREATE TABLE `Kundenbestellung`
 (
-	`Auftrag_ID` Char(10),
+	`Auftrag_ID` INTEGER AUTO_INCREMENT,
 	`Auftragsdatum` Datetime,
 	`Status` Bool,
-	`Kunde_ID` Char(10),
-	`Mitarbeiter_ID` Char(10),
+	`Kunde_ID` INTEGER,
+	`Mitarbeiter_ID` INTEGER,
 	PRIMARY KEY(`Auftrag_ID`),
 	FOREIGN KEY(`Kunde_ID`)
 		REFERENCES `Kunde`(`Kunde_ID`)
@@ -91,11 +90,11 @@ CREATE TABLE `Kundenbestellung`
 
 CREATE TABLE `Artikel`
 (
-	`Artikel_ID` Char(10),
+	`Artikel_ID` INTEGER AUTO_INCREMENT,
 	`Name` Char(255),
 	`Beschreibung` Char(255),
 	`Verkaufspreis` Double,
-	`Auftrag_ID` Char(10),
+	`Auftrag_ID` INTEGER,
 	PRIMARY KEY(`Artikel_ID`),
 	FOREIGN KEY(`Auftrag_ID`)
 		REFERENCES `Kundenbestellung`(`Auftrag_ID`)
@@ -105,13 +104,13 @@ CREATE TABLE `Artikel`
 
 CREATE TABLE `Produkt`
 (
-	`Produkt_ID` Char(10),
+	`Produkt_ID` INTEGER AUTO_INCREMENT,
 	`Name` Char(255),
 	`Einkaufspreis` Double,
 	`Lagerbestand` int,
 	`Mindestbestand` int,
-	`Kategorie_ID` Char(10),
-	`Lieferant_ID` Char(10),
+	`Kategorie_ID` INTEGER,
+	`Lieferant_ID` INTEGER,
 	PRIMARY KEY(`Produkt_ID`),
 	FOREIGN KEY(`Kategorie_ID`)
 		REFERENCES `Produktkategorie`(`Kategorie_ID`)
@@ -124,8 +123,8 @@ CREATE TABLE `Produkt`
 
 CREATE TABLE `Produkt_Artikel`
 (
-	`Produkt_ID` Char(10),
-	`Artikel_ID` Char(10),
+	`Produkt_ID` INTEGER,
+	`Artikel_ID` INTEGER,
 	PRIMARY KEY(`Produkt_ID`,`Artikel_ID`),
 	FOREIGN KEY(`Produkt_ID`)
 		REFERENCES `Produkt`(`Produkt_ID`)
@@ -138,10 +137,10 @@ CREATE TABLE `Produkt_Artikel`
 
 CREATE TABLE `Lieferantenbestellung`
 (
-	`LAuftrag_ID` Char(10),
+	`LAuftrag_ID` INTEGER AUTO_INCREMENT,
 	`Auftragsdatum` Datetime,
 	`Status` Bool,
-	`Lieferant_ID` Char(10),
+	`Lieferant_ID` INTEGER,
 	PRIMARY KEY(`LAuftrag_ID`),
 	FOREIGN KEY(`Lieferant_ID`)
 		REFERENCES `Lieferant`(`Lieferant_ID`)
@@ -151,8 +150,8 @@ CREATE TABLE `Lieferantenbestellung`
 
 CREATE TABLE `Lieferantenbestellung_Produkt`
 (
-	`LAuftrag_ID` Char(10),	
-	`Produkt_ID` Char(10),
+	`LAuftrag_ID` INTEGER,	
+	`Produkt_ID` INTEGER,
 	PRIMARY KEY(`LAuftrag_ID`,`Produkt_ID`),
 	FOREIGN KEY(`Produkt_ID`)
 		REFERENCES `Produkt`(`Produkt_ID`)
