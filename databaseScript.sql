@@ -25,6 +25,7 @@ CREATE TABLE `Mitarbeiter`
 	`Mitarbeiter_ID` INTEGER AUTO_INCREMENT,
 	`Funktion` Char(255),
 	`Anrede` Char(255),
+    `Name` Char(225),
 	`Vorname` Char(255),
 	`Telefon` Char(255),
 	`Email` Char(255),
