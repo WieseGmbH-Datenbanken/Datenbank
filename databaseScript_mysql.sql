@@ -28,7 +28,7 @@ CREATE TABLE `Kunde`
 	`Zahlungsart` Char(255),
 	`Adresse_ID` INTEGER,
 	PRIMARY KEY(`Kunde_ID`)	,
-	FOREIGN KEY(`Adresse_ID`),
+	FOREIGN KEY(`Adresse_ID`)
 		REFERENCES `Adresse`(`Adresse_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
@@ -47,7 +47,7 @@ CREATE TABLE `Mitarbeiter`
 	`Lohn` Double,
 	`Adresse_ID` INTEGER,
 	PRIMARY KEY(`Mitarbeiter_ID`),
-	FOREIGN KEY(`Adresse_ID`),
+	FOREIGN KEY(`Adresse_ID`)
 		REFERENCES `Adresse`(`Adresse_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
@@ -65,13 +65,18 @@ CREATE TABLE `Lieferant`
 	PRIMARY KEY(`Lieferant_ID`),
 	FOREIGN KEY(`Mitarbeiter_ID`)
 		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
-	FOREIGN KEY(`Adresse_ID`),
+		ON DELETE RESTRICT ON UPDATE RESTRICT,
+	FOREIGN KEY(`Adresse_ID`)
 		REFERENCES `Adresse`(`Adresse_ID`)
 		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 CREATE TABLE `Kundenbestellung`
 (
 	`Auftrag_ID` INTEGER AUTO_INCREMENT,
@@ -85,7 +90,7 @@ CREATE TABLE `Kundenbestellung`
 		ON DELETE RESTRICT ON UPDATE RESTRICT,
 	FOREIGN KEY(`Mitarbeiter_ID`)
 		REFERENCES `Mitarbeiter`(`Mitarbeiter_ID`)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -95,13 +100,13 @@ CREATE TABLE `Artikel`
 	`Name` Char(255),
 	`Beschreibung` Char(255),
 	`Verkaufspreis` Double,
-	PRIMARY KEY(`Artikel_ID`),
+	PRIMARY KEY(`Artikel_ID`)
 )
 ;
 
 CREATE TABLE `Artikel_Kundenbestellung`
 (
-	`Artikel_ID` INTEGER
+	`Artikel_ID` INTEGER,
 	`Auftrag_ID` INTEGER,
 	PRIMARY KEY(`Artikel_ID`,`Auftrag_ID`),
 	FOREIGN KEY(`Artikel_ID`)

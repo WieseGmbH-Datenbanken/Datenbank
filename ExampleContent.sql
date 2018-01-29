@@ -10,17 +10,17 @@
 	`Steuernummer` Int,
 	`Lohn` Double,)
 */
-INSERT INTO mitarbeiter (Funktion, Anrede, Name, Vorname, Telefon, Email, Steuernummer, Lohn)
-VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 1329763, '3000'),
-('Verkäufer', 'Herr', 'Müller', 'Helmut', '0175 975631', 'HMüller@gmx.de', 1321984, '3000'),
-('Manager', 'Herr', 'Hoffmann', 'Michael', '0175 761458', 'MHoffmann@gmx.de', 132975, '4500'),
-('Support', 'Frau', 'Meier', 'Natalie', '0175 97158426', 'MMeier@gmx.de', 1329487, '2500'),
-('Finanzmanager', 'Frau', 'Manns', 'Olivia', '0175 88452111', 'OManns@gmx.de', 1327845, '2800'),
-('Chef', 'Frau', 'Behrens', 'Magda', '0175 88452845', 'MBehrens@gmx.de', 7891452, '5000'),
-('Logistiker', 'Herr', 'Logik', 'Stefan', '0177 78452111', 'SLogik@gmx.de', 1379845, '2900'),
-('Verkäufer', 'Herr', 'Nickel', 'Günter', '0175 4452111', 'GNickel@gmx.de', 7851246, '3000'),
-('Verkäufer', 'Frau', 'Gold', 'Sarah', '0175 8846411', 'SGold@gmx.de', 1327532, '3000'),
-('Personalmanager', 'Herr', 'Eisen', 'Ole', '0148 87532111', 'OEisen@gmx.de', 9827845, '2800');
+INSERT INTO mitarbeiter (Funktion, Anrede, Name, Vorname, Telefon, Email, Steuernummer, Lohn, Adresse_ID)
+VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 1329763, '3000', 1),
+('Verkäufer', 'Herr', 'Müller', 'Helmut', '0175 975631', 'HMüller@gmx.de', 1321984, '3000', 2),
+('Manager', 'Herr', 'Hoffmann', 'Michael', '0175 761458', 'MHoffmann@gmx.de', 132975, '4500', 3),
+('Support', 'Frau', 'Meier', 'Natalie', '0175 97158426', 'MMeier@gmx.de', 1329487, '2500', 4),
+('Finanzmanager', 'Frau', 'Manns', 'Olivia', '0175 88452111', 'OManns@gmx.de', 1327845, '2800', 5),
+('Chef', 'Frau', 'Behrens', 'Magda', '0175 88452845', 'MBehrens@gmx.de', 7891452, '5000',15),
+('Logistiker', 'Herr', 'Logik', 'Stefan', '0177 78452111', 'SLogik@gmx.de', 1379845, '2900',16),
+('Verkäufer', 'Herr', 'Nickel', 'Günter', '0175 4452111', 'GNickel@gmx.de', 7851246, '3000',17),
+('Verkäufer', 'Frau', 'Gold', 'Sarah', '0175 8846411', 'SGold@gmx.de', 1327532, '3000',18),
+('Personalmanager', 'Herr', 'Eisen', 'Ole', '0148 87532111', 'OEisen@gmx.de', 9827845, '2800',19);
 
 
 
@@ -35,18 +35,18 @@ VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 
 	`Email` Char(255),
 	`Zahlungsart` Char(255),)
 */
-INSERT INTO kunde (Anrede, Name, Vorname, Telefon, Email, Zahlungsart)
-VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal'),
-('Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal'),
-('Herr', 'Klaas', 'Oliver', '1893 741852', 'KOliver@google.de', 'Direktüberweisung'),
-('Frau', 'Kerze', 'Hannah', '0175 8426597', 'HannahK@yahoo.de', 'PayPal'),
-('Frau', 'Waal', 'Andrea', '1789 7589641', 'AWaal@gmx.de', 'PayPal'),
-('Frau', 'Heinrich', 'Lisa', '0176 3234623', 'LHeinrich@gmx.de', 'Lastschrift'),
-('Herr', 'Schulz', 'Axel', '1789 4352346', 'ASchulz@web.de', 'Direktüberweisung'),
-('Herr', 'Wagner', 'Carsten', '1789 424757', 'CWagner@yahoo.de', 'Paypal'),
-('Frau', 'Wiese', 'Margaret', '1789 2196446', 'MargaretWiese@gmx.de', 'PayPal'),
-('Herr', 'Lingsch', 'Horst', '0571 7589644', 'HorstLingsch@web.de', 'Lastschrift'),
-('Herr', 'Köller', 'Andreas', '0571 5977469', 'AKöller@gmx.de', 'PayPal');
+INSERT INTO kunde (Anrede, Name, Vorname, Telefon, Email, Zahlungsart, Adresse_ID)
+VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal', 9),
+('Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal', 10),
+('Herr', 'Klaas', 'Oliver', '1893 741852', 'KOliver@google.de', 'Direktüberweisung', 11),
+('Frau', 'Kerze', 'Hannah', '0175 8426597', 'HannahK@yahoo.de', 'PayPal', 12),
+('Frau', 'Waal', 'Andrea', '1789 7589641', 'AWaal@gmx.de', 'PayPal', 13),
+('Frau', 'Heinrich', 'Lisa', '0176 3234623', 'LHeinrich@gmx.de', 'Lastschrift',20),
+('Herr', 'Schulz', 'Axel', '1789 4352346', 'ASchulz@web.de', 'Direktüberweisung',21),
+('Herr', 'Wagner', 'Carsten', '1789 424757', 'CWagner@yahoo.de', 'Paypal',22),
+('Frau', 'Wiese', 'Margaret', '1789 2196446', 'MargaretWiese@gmx.de', 'PayPal',23),
+('Herr', 'Lingsch', 'Horst', '0571 7589644', 'HorstLingsch@web.de', 'Lastschrift',24),
+('Herr', 'Köller', 'Andreas', '0571 5977469', 'AKöller@gmx.de', 'PayPal',25);
 
 
 /*
@@ -60,7 +60,7 @@ VALUES('Sommerreifen', 'Sommerreifen für das Auto'),
 ('Winterreifen', 'Winterreifen für das Auto'),
 ('Bremse', 'Bremsscheiben und Bremsklötze'),
 ('Radio', 'Autoradio'),
-('Polzster', 'Sitzbezüge'),
+('Polster', 'Sitzbezüge'),
 ('Boden', 'Gummimatten zum Unterlegen'),
 ('Auspuff', 'Auto-Auspuff'),
 ('Motor', 'Teile für den Automotor'),
@@ -76,11 +76,11 @@ VALUES('Sommerreifen', 'Sommerreifen für das Auto'),
 	`Steuernummer` Int,
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO lieferant (Name, Telefon, Email, Steuernummer, Mitarbeiter_ID) 
-VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1),
-( 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , 1),
-( 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , 2),
-( 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 1652487 , 2);
+INSERT INTO lieferant (Name, Telefon, Email, Steuernummer, Mitarbeiter_ID, Adresse_ID) 
+VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1, 6),
+( 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , 1, 7),
+( 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , 2, 8),
+( 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 1652487 , 2, 14);
 
 
 
@@ -94,33 +94,33 @@ VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1),
 	`Mitarbeiter_ID` Char(10) NULL,
 	`Kunde_ID` Char(10) NULL,)
 */
-INSERT INTO adresse (Strasse, PLZ, Ort, Lieferant_ID, Mitarbeiter_ID, Kunde_ID)
-VALUES( 'Königsstraße 21', '32427', 'Minden', NULL, 1, NULL),
-( 'Am Kolk', '32427', 'Minden', NULL, 2, NULL),
-( 'Atilleriestraße 4', '32427', 'Minden', NULL, 3, NULL),
-( 'Hohenstaufenring 22', '32427', 'Minden', NULL, 4, NULL),
-( 'Bismarckstraße 5', '32427', 'Minden', NULL, 5, NULL),
-( 'Ringstraße 9', '32427', 'Minden', 1, NULL, NULL),
-( 'Berliner Ring 2', '38440', 'Wolfsburg', 2, NULL, NULL),
-( 'An der Stadtmühle 2', '32423', 'Minden', 3, NULL, NULL),
-( 'Musterstraße 9', '50529', 'Pulheim', NULL, NULL, 1),
-( 'Napoleonstraße 2', '31749', 'Auetal', NULL, NULL, 2),
-( 'Westerholz 10', '31749', 'Auetal', NULL, NULL, 3),
-( 'Rahdener Straße 11', '32339', 'Lübbecke', NULL, NULL, 4),
-( 'Hahler Straße 4', '32427', 'Minden', NULL, NULL, 5),
-( 'Bergstraße 7', '85221', 'Dachau', 4, NULL, NULL),
-( 'Königsstraße 23', '32427', 'Minden', NULL, 6, NULL),
-( 'Hahler Straße 21', '32427', 'Minden', NULL, 7, NULL),
-( 'Königswall 2', '32427', 'Minden', NULL, 8, NULL),
-( 'Hohenzollernring 21', '32427', 'Minden', NULL, 9, NULL),
-( 'Portastraße 1', '32427', 'Minden', NULL, 10, NULL),
-( 'Bärenburger Straße 34', '31749', 'Auetal', NULL, NULL, 5),
-( 'Hahler Straße 6', '32427', 'Minden', NULL, NULL, 6),
-( 'Bismarckstraße 30', '32427', 'Minden', NULL, NULL, 7),
-( 'Petersstraße 2', '10585', 'Berlin', NULL, NULL, 8),
-( 'Weizstraße 26', '10707', 'Berlin', NULL, NULL, 9),
-( 'Besenstraße 13', '38440', 'Wolfsburg', NULL, NULL, 10),
-( 'Napoleonstraße 23', '31749', 'Auetal', NULL, NULL, 11);
+INSERT INTO adresse (Strasse, PLZ, Ort)
+VALUES( 'Königsstraße 21', '32427', 'Minden'),
+( 'Am Kolk', '32427', 'Minden'),
+( 'Atilleriestraße 4', '32427', 'Minden'),
+( 'Hohenstaufenring 22', '32427', 'Minden'),
+( 'Bismarckstraße 5', '32427', 'Minden'),
+( 'Ringstraße 9', '32427', 'Minden'),
+( 'Berliner Ring 2', '38440', 'Wolfsburg'),
+( 'An der Stadtmühle 2', '32423', 'Minden'),
+( 'Musterstraße 9', '50529', 'Pulheim'),
+( 'Napoleonstraße 2', '31749', 'Auetal'),
+( 'Westerholz 10', '31749', 'Auetal'),
+( 'Rahdener Straße 11', '32339', 'Lübbecke'),
+( 'Hahler Straße 4', '32427', 'Minden'),
+( 'Bergstraße 7', '85221', 'Dachau'),
+( 'Königsstraße 23', '32427', 'Minden'),
+( 'Hahler Straße 21', '32427', 'Minden'),
+( 'Königswall 2', '32427', 'Minden'),
+( 'Hohenzollernring 21', '32427', 'Minden'),
+( 'Portastraße 1', '32427', 'Minden'),
+( 'Bärenburger Straße 34', '31749', 'Auetal'),
+( 'Hahler Straße 6', '32427', 'Minden'),
+( 'Bismarckstraße 30', '32427', 'Minden'),
+( 'Petersstraße 2', '10585', 'Berlin'),
+( 'Weizstraße 26', '10707', 'Berlin'),
+( 'Besenstraße 13', '38440', 'Wolfsburg'),
+( 'Napoleonstraße 23', '31749', 'Auetal');
 
 
 /*
@@ -150,17 +150,16 @@ VALUES( STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, 1, 1),
 	`Verkaufspreis` Double,
 	`Auftrag_ID` Char(10),)
 */
-INSERT INTO artikel (Name, Beschreibung, Verkaufspreis, Auftrag_ID)
-VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480, 1),
-( 'Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480, 2),
-( '2er Set Bremsen', 'Ein Set aus 2 Bremsscheiben und Bremsbeläge, Innenbelüftet', 300, 3),
-( '4er Set Bremsen', 'Ein Set aus 4 Bremsscheiben und Bremsbeläge ', 600, 4),
-( 'Kenwood Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion', 80, 5),
-( 'Sportliche Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Polo und Golf', 70, 6),
-( 'Leistungsstarke Autobatterie', 'Hält länger als andere Batterien!', 50, 7),
-( 'Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100, 8),
-( 'Heckverkleidung', 'Heckverkleidung für VW Polo', 120, 9);
-
+INSERT INTO artikel (Name, Beschreibung, Verkaufspreis)
+VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480),
+( 'Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480),
+( '2er Set Bremsen', 'Ein Set aus 2 Bremsscheiben und Bremsbeläge, Innenbelüftet', 300),
+( '4er Set Bremsen', 'Ein Set aus 4 Bremsscheiben und Bremsbeläge ', 600),
+( 'Kenwood Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion', 80),
+( 'Sportliche Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Polo und Golf', 70),
+( 'Leistungsstarke Autobatterie', 'Hält länger als andere Batterien!', 50),
+( 'Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100),
+( 'Heckverkleidung', 'Heckverkleidung für VW Polo', 120);
 
 /*
 	INSERT für die Tabelle Produkt
@@ -236,5 +235,26 @@ INSERT INTO lieferantenbestellung_produkt VALUES(5, 5);
 INSERT INTO lieferantenbestellung_produkt VALUES(6, 7);
 INSERT INTO lieferantenbestellung_produkt VALUES(7, 8);
 INSERT INTO lieferantenbestellung_produkt VALUES(8, 9);
+
+
+/*
+	INSERT für die Zwischentabelle Artikel_Kundenbestellung
+	`Artikel_ID` INTEGER,
+	`Auftrag_ID` INTEGER,
+*/
+
+INSERT INTO Artikel_Kundenbestellung (Artikel_ID, Auftrag_ID)
+VALUES (1,1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9);
+
+
+
 
 
