@@ -45,7 +45,6 @@ CREATE TABLE Lieferant
 	PRIMARY KEY(Lieferant_ID) NOT NULL,
 	FOREIGN KEY(Mitarbeiter_ID)
 		REFERENCES Mitarbeiter(Mitarbeiter_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -60,14 +59,11 @@ CREATE TABLE Adresse
 	Kunde_ID INTEGER NULL,
 	PRIMARY KEY(Adresse_ID),
 	FOREIGN KEY(Mitarbeiter_ID)
-		REFERENCES Mitarbeiter(Mitarbeiter_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Mitarbeiter(Mitarbeiter_ID),
 	FOREIGN KEY(Kunde_ID)
-		REFERENCES Kunde(Kunde_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Kunde(Kunde_ID),
 	FOREIGN KEY(Lieferant_ID)
 		REFERENCES Lieferant(Lieferant_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -80,11 +76,9 @@ CREATE TABLE Kundenbestellung
 	Mitarbeiter_ID INTEGER NOT NULL,
 	PRIMARY KEY(Auftrag_ID),
 	FOREIGN KEY(Kunde_ID)
-		REFERENCES Kunde(Kunde_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Kunde(Kunde_ID),
 	FOREIGN KEY(Mitarbeiter_ID)
 		REFERENCES Mitarbeiter(Mitarbeiter_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -98,7 +92,6 @@ CREATE TABLE Artikel
 	PRIMARY KEY(Artikel_ID) NOT NULL,
 	FOREIGN KEY(Auftrag_ID)
 		REFERENCES Kundenbestellung(Auftrag_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -113,11 +106,9 @@ CREATE TABLE Produkt
 	Lieferant_ID INTEGER NOT NULL,
 	PRIMARY KEY(Produkt_ID),
 	FOREIGN KEY(Kategorie_ID)
-		REFERENCES Produktkategorie(Kategorie_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Produktkategorie(Kategorie_ID),
 	FOREIGN KEY(Lieferant_ID)
 		REFERENCES Lieferant(Lieferant_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -127,11 +118,9 @@ CREATE TABLE Produkt_Artikel
 	Artikel_ID INTEGER NOT NULL,
 	PRIMARY KEY(Produkt_ID,Artikel_ID),
 	FOREIGN KEY(Produkt_ID)
-		REFERENCES Produkt(Produkt_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Produkt(Produkt_ID),
 	FOREIGN KEY(Artikel_ID)
 		REFERENCES Artikel(Artikel_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -144,7 +133,6 @@ CREATE TABLE Lieferantenbestellung
 	PRIMARY KEY(LAuftrag_ID),
 	FOREIGN KEY(Lieferant_ID)
 		REFERENCES Lieferant(Lieferant_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 
@@ -154,11 +142,9 @@ CREATE TABLE Lieferantenbestellung_Produkt
 	Produkt_ID INTEGER NOT NULL,
 	PRIMARY KEY(LAuftrag_ID,Produkt_ID),
 	FOREIGN KEY(Produkt_ID)
-		REFERENCES Produkt(Produkt_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Produkt(Produkt_ID),
 	FOREIGN KEY(LAuftrag_ID)
 		REFERENCES Lieferantenbestellung(LAuftrag_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 ;
 

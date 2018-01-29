@@ -28,8 +28,8 @@ CREATE TABLE Mitarbeiter
 	Vorname Char(255) NOT NULL,
 	Telefon Char(255) NOT NULL,
 	Email Char(255) NOT NULL,
-	Steuernummer Int NOT NULL,
-	Lohn Double NOT NULL,
+	Steuernummer INTEGER NOT NULL,
+	Lohn float NOT NULL,
 	PRIMARY KEY(Mitarbeiter_ID)
 )
 go
@@ -40,12 +40,12 @@ CREATE TABLE Lieferant
 	Name Char(255) NOT NULL,
 	Telefon Char(255) NOT NULL,
 	Email Char(255) NOT NULL,
-	Steuernummer Int NOT NULL,
+	Steuernummer INTEGER NOT NULL,
 	Mitarbeiter_ID INTEGER NOT NULL,
-	PRIMARY KEY(Lieferant_ID) NOT NULL,
-	FOREIGN KEY(Mitarbeiter_ID)
+	PRIMARY KEY(Lieferant_ID),
+	CONSTRAINT fk_Lieferant_mitID FOREIGN KEY (Mitarbeiter_ID)
 		REFERENCES Mitarbeiter(Mitarbeiter_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
+		ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
 
@@ -60,14 +60,12 @@ CREATE TABLE Adresse
 	Kunde_ID INTEGER NULL,
 	PRIMARY KEY(Adresse_ID),
 	FOREIGN KEY(Mitarbeiter_ID)
-		REFERENCES Mitarbeiter(Mitarbeiter_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Mitarbeiter(Mitarbeiter_ID),
 	FOREIGN KEY(Kunde_ID)
-		REFERENCES Kunde(Kunde_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Kunde(Kunde_ID),	
 	FOREIGN KEY(Lieferant_ID)
 		REFERENCES Lieferant(Lieferant_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
+
 )
 go
 
@@ -75,16 +73,16 @@ CREATE TABLE Kundenbestellung
 (
 	Auftrag_ID INTEGER NOT NULL IDENTITY(1,1),
 	Auftragsdatum Datetime NOT NULL,
-	Status Bool NOT NULL,
+	Status Bit NOT NULL,
 	Kunde_ID INTEGER NOT NULL,
 	Mitarbeiter_ID INTEGER NOT NULL,
 	PRIMARY KEY(Auftrag_ID),
 	FOREIGN KEY(Kunde_ID)
 		REFERENCES Kunde(Kunde_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY(Mitarbeiter_ID)
 		REFERENCES Mitarbeiter(Mitarbeiter_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
+		ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
 
@@ -93,12 +91,12 @@ CREATE TABLE Artikel
 	Artikel_ID INTEGER NOT NULL IDENTITY(1,1),
 	Name Char(255) NOT NULL,
 	Beschreibung Char(255) NOT NULL,
-	Verkaufspreis Double NOT NULL,
+	Verkaufspreis float NOT NULL,
 	Auftrag_ID INTEGER NOT NULL,
-	PRIMARY KEY(Artikel_ID) NOT NULL,
+	PRIMARY KEY(Artikel_ID),
 	FOREIGN KEY(Auftrag_ID)
 		REFERENCES Kundenbestellung(Auftrag_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
+		ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
 
@@ -106,7 +104,7 @@ CREATE TABLE Produkt
 (
 	Produkt_ID INTEGER NOT NULL IDENTITY(1,1),
 	Name Char(255) NOT NULL,
-	Einkaufspreis Double NOT NULL,
+	Einkaufspreis float NOT NULL,
 	Lagerbestand int NOT NULL,
 	Mindestbestand int NOT NULL,
 	Kategorie_ID INTEGER NOT NULL,
@@ -114,10 +112,10 @@ CREATE TABLE Produkt
 	PRIMARY KEY(Produkt_ID),
 	FOREIGN KEY(Kategorie_ID)
 		REFERENCES Produktkategorie(Kategorie_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY(Lieferant_ID)
 		REFERENCES Lieferant(Lieferant_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
+		ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
 
@@ -127,11 +125,9 @@ CREATE TABLE Produkt_Artikel
 	Artikel_ID INTEGER NOT NULL,
 	PRIMARY KEY(Produkt_ID,Artikel_ID),
 	FOREIGN KEY(Produkt_ID)
-		REFERENCES Produkt(Produkt_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Produkt(Produkt_ID),
 	FOREIGN KEY(Artikel_ID)
 		REFERENCES Artikel(Artikel_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 go
 
@@ -139,12 +135,12 @@ CREATE TABLE Lieferantenbestellung
 (
 	LAuftrag_ID INTEGER NOT NULL IDENTITY(1,1),
 	Auftragsdatum Datetime NOT NULL,
-	Status Bool NOT NULL,
+	Status BIT NOT NULL,
 	Lieferant_ID INTEGER NOT NULL,
 	PRIMARY KEY(LAuftrag_ID),
 	FOREIGN KEY(Lieferant_ID)
 		REFERENCES Lieferant(Lieferant_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
+		ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
 
@@ -154,11 +150,9 @@ CREATE TABLE Lieferantenbestellung_Produkt
 	Produkt_ID INTEGER NOT NULL,
 	PRIMARY KEY(LAuftrag_ID,Produkt_ID),
 	FOREIGN KEY(Produkt_ID)
-		REFERENCES Produkt(Produkt_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT,
+		REFERENCES Produkt(Produkt_ID),
 	FOREIGN KEY(LAuftrag_ID)
 		REFERENCES Lieferantenbestellung(LAuftrag_ID)
-		ON DELETE RESTRICT ON UPDATE RESTRICT
 )
 go
 
