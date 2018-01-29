@@ -132,7 +132,9 @@ INSERT INTO kundenbestellung VALUES('3', STR_TO_DATE('1/15/2018 11:06:26 AM', '%
 INSERT INTO kundenbestellung VALUES('4', STR_TO_DATE('1/20/2018 7:46:48 AM', '%c/%e/%Y %r'), false, '3', '2');
 INSERT INTO kundenbestellung VALUES('5', STR_TO_DATE('1/23/2018 16:46:36 PM', '%c/%e/%Y %r'), true, '5', '1');
 INSERT INTO kundenbestellung VALUES('6', STR_TO_DATE('1/23/2018 18:46:36 PM', '%c/%e/%Y %r'), false, '4', '1');
-
+INSERT INTO kundenbestellung VALUES('7', STR_TO_DATE('1/24/2018 18:48:36 PM', '%c/%e/%Y %r'), false, '6', '8');
+INSERT INTO kundenbestellung VALUES('8', STR_TO_DATE('1/26/2018 19:46:36 PM', '%c/%e/%Y %r'), false, '7', '9');
+INSERT INTO kundenbestellung VALUES('9', STR_TO_DATE('1/29/2018 17:42:36 PM', '%c/%e/%Y %r'), false, '8', '1');
 
 /*
 	INSERT für die Tabelle Artikel
@@ -148,6 +150,9 @@ INSERT INTO artikel VALUES('3', '2er Set Bremsen', 'Ein Set aus 2 Bremsscheiben 
 INSERT INTO artikel VALUES('4', '4er Set Bremsen', 'Ein Set aus 4 Bremsscheiben und Bremsbeläge ', 600, '4');
 INSERT INTO artikel VALUES('5', 'Kenwood Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion', 80, '5');
 INSERT INTO artikel VALUES('6', 'Sportliche Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Polo und Golf', 70, '6');
+INSERT INTO artikel VALUES('7', 'Leistungsstarke Autobatterie', 'Hält länger als andere Batterien!', 50, '7');
+INSERT INTO artikel VALUES('8', 'Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100, '8');
+INSERT INTO artikel VALUES('9', 'Heckverkleidung', 'Heckverkleidung für VW Polo', 120, '9');
 
 
 /*
@@ -165,7 +170,10 @@ INSERT INTO produkt VALUES('2', 'Kenwood Radio', 80, 1000, 800, '4', '4');
 INSERT INTO produkt VALUES('3', 'Walser Autositzbezug', 70, 800, 890, '5', '2');
 INSERT INTO produkt VALUES('4', 'Purework Auto-Gummimatten', 30, 800, 803, '6', '3');
 INSERT INTO produkt VALUES('5', 'Michelin Winterreifen', 120, 1402, 1000, '2', '1');
-INSERT INTO produkt VALUES('5', 'Bremsscheiben und Beläge', 150, 1203, 900, '2', '1');
+INSERT INTO produkt VALUES('6', 'Bremsscheiben und Beläge', 150, 1203, 900, '2', '1');
+INSERT INTO produkt VALUES('7', 'Autobatterie', 50, 500, 300, '8', '1');
+INSERT INTO produkt VALUES('8', 'Katalysator', 100, 600, 700, '7', '2');
+INSERT INTO produkt VALUES('9', 'Heckverkleidung', 120, 550, 500, '9', '3');
 
 
 
@@ -177,10 +185,13 @@ INSERT INTO produkt VALUES('5', 'Bremsscheiben und Beläge', 150, 1203, 900, '2'
 */
 INSERT INTO produkt_artikel VALUES('1', '1');
 INSERT INTO produkt_artikel VALUES('5', '2');
-INSERT INTO produkt_artikel VALUES('5', '3');
-INSERT INTO produkt_artikel VALUES('5', '4');
+INSERT INTO produkt_artikel VALUES('6', '3');
+INSERT INTO produkt_artikel VALUES('6', '4');
 INSERT INTO produkt_artikel VALUES('2', '5');
 INSERT INTO produkt_artikel VALUES('3', '6');
+INSERT INTO produkt_artikel VALUES('7', '7');
+INSERT INTO produkt_artikel VALUES('8', '8');
+INSERT INTO produkt_artikel VALUES('9', '9');
 
 
 /*
@@ -191,10 +202,14 @@ INSERT INTO produkt_artikel VALUES('3', '6');
 	`Lieferant_ID` Char(10),)
 */
 INSERT INTO lieferantenbestellung VALUES('1', STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), false, '1');
-INSERT INTO lieferantenbestellung VALUES('2', STR_TO_DATE('1/12/2018 12:16:26 AM', '%c/%e/%Y %r'), false, '4');
-INSERT INTO lieferantenbestellung VALUES('3', STR_TO_DATE('1/15/2018 14:56:25 AM', '%c/%e/%Y %r'), false, '2');
+INSERT INTO lieferantenbestellung VALUES('2', STR_TO_DATE('1/12/2018 12:16:26 PM', '%c/%e/%Y %r'), false, '4');
+INSERT INTO lieferantenbestellung VALUES('3', STR_TO_DATE('1/15/2018 14:56:25 PM', '%c/%e/%Y %r'), false, '2');
 INSERT INTO lieferantenbestellung VALUES('4', STR_TO_DATE('1/20/2018 11:26:46 AM', '%c/%e/%Y %r'), false, '3');
 INSERT INTO lieferantenbestellung VALUES('5', STR_TO_DATE('1/23/2018 08:44:23 AM', '%c/%e/%Y %r'), false, '2');
+INSERT INTO lieferantenbestellung VALUES('6', STR_TO_DATE('1/25/2018 17:42:20 PM', '%c/%e/%Y %r'), false, '1');
+INSERT INTO lieferantenbestellung VALUES('7', STR_TO_DATE('1/27/2018 07:30:15 AM', '%c/%e/%Y %r'), false, '2');
+INSERT INTO lieferantenbestellung VALUES('8', STR_TO_DATE('1/29/2018 15:23:58 PM', '%c/%e/%Y %r'), false, '3');
+
 
 
 
@@ -209,5 +224,8 @@ INSERT INTO lieferantenbestellung_produkt VALUES('2', '2');
 INSERT INTO lieferantenbestellung_produkt VALUES('3', '3');
 INSERT INTO lieferantenbestellung_produkt VALUES('4', '4');
 INSERT INTO lieferantenbestellung_produkt VALUES('5', '5');
+INSERT INTO lieferantenbestellung_produkt VALUES('6', '7');
+INSERT INTO lieferantenbestellung_produkt VALUES('7', '8');
+INSERT INTO lieferantenbestellung_produkt VALUES('8', '9');
 
 
