@@ -10,11 +10,17 @@
 	`Steuernummer` Int,
 	`Lohn` Double,)
 */
-INSERT INTO mitarbeiter VALUES('1', 'Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 1329763, '3000');
-INSERT INTO mitarbeiter VALUES('2', 'Verkäufer', 'Herr', 'Müller', 'Helmut', '0175 975631', 'HMüller@gmx.de', 1321984, '3000');
-INSERT INTO mitarbeiter VALUES('3', 'Manager', 'Herr', 'Hoffmann', 'Michael', '0175 761458', 'MHoffmann@gmx.de', 132975, '4500');
-INSERT INTO mitarbeiter VALUES('4', 'Support', 'Frau', 'Meier', 'Natalie', '0175 97158426', 'MMeier@gmx.de', 1329487, '2500');
-INSERT INTO mitarbeiter VALUES('5', 'Finanzmanager', 'Frau', 'Manns', 'Olivia', '0175 88452111', 'OManns@gmx.de', 1327845, '2800');
+INSERT INTO mitarbeiter VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 1329763, '3000');
+INSERT INTO mitarbeiter VALUES('Verkäufer', 'Herr', 'Müller', 'Helmut', '0175 975631', 'HMüller@gmx.de', 1321984, '3000');
+INSERT INTO mitarbeiter VALUES('Manager', 'Herr', 'Hoffmann', 'Michael', '0175 761458', 'MHoffmann@gmx.de', 132975, '4500');
+INSERT INTO mitarbeiter VALUES('Support', 'Frau', 'Meier', 'Natalie', '0175 97158426', 'MMeier@gmx.de', 1329487, '2500');
+INSERT INTO mitarbeiter VALUES('Finanzmanager', 'Frau', 'Manns', 'Olivia', '0175 88452111', 'OManns@gmx.de', 1327845, '2800');
+INSERT INTO mitarbeiter VALUES('Chef', 'Frau', 'Behrens', 'Magda', '0175 88452845', 'MBehrens@gmx.de', 7891452, '5000');
+INSERT INTO mitarbeiter VALUES('Logistiker', 'Herr', 'Logik', 'Stefan', '0177 78452111', 'SLogik@gmx.de', 1379845, '2900');
+INSERT INTO mitarbeiter VALUES('Verkäufer', 'Herr', 'Nickel', 'Günter', '0175 4452111', 'GNickel@gmx.de', 7851246, '3000');
+INSERT INTO mitarbeiter VALUES('Verkäufer', 'Frau', 'Gold', 'Sarah', '0175 8846411', 'SGold@gmx.de', 1327532, '3000');
+INSERT INTO mitarbeiter VALUES('Personalmanager', 'Herr', 'Eisen', 'Ole', '0148 87532111', 'OEisen@gmx.de', 9827845, '2800');
+
 
 
 
@@ -28,11 +34,11 @@ INSERT INTO mitarbeiter VALUES('5', 'Finanzmanager', 'Frau', 'Manns', 'Olivia', 
 	`Email` Char(255),
 	`Zahlungsart` Char(255),)
 */
-INSERT INTO kunde VALUES('1', 'Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal');
-INSERT INTO kunde VALUES('2', 'Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal');
-INSERT INTO kunde VALUES('3', 'Herr', 'Klaas', 'Oliver', '1893 741852', 'KOliver@google.de', 'PayPal');
-INSERT INTO kunde VALUES('4', 'Frau', 'Kerze', 'Hannah', '0175 8426597', 'HannahK@yahoo.de', 'PayPal');
-INSERT INTO kunde VALUES('5', 'Frau', 'Waal', 'Andrea', '1789 7589641', 'AWaal@gmx.de', 'PayPal');
+INSERT INTO kunde VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal');
+INSERT INTO kunde VALUES('Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal');
+INSERT INTO kunde VALUES('Herr', 'Klaas', 'Oliver', '1893 741852', 'KOliver@google.de', 'PayPal');
+INSERT INTO kunde VALUES('Frau', 'Kerze', 'Hannah', '0175 8426597', 'HannahK@yahoo.de', 'PayPal');
+INSERT INTO kunde VALUES('Frau', 'Waal', 'Andrea', '1789 7589641', 'AWaal@gmx.de', 'PayPal');
 
 
 /*
@@ -41,12 +47,15 @@ INSERT INTO kunde VALUES('5', 'Frau', 'Waal', 'Andrea', '1789 7589641', 'AWaal@g
 	`Kategorie` Char(255),
 	`Beschreibung` Char(255),)
 */
-INSERT INTO produktkategorie VALUES('1', 'Sommerreifen', 'Sommerreifen für das Auto');
-INSERT INTO produktkategorie VALUES('2', 'Winterreifen', 'Winterreifen für das Auto');
-INSERT INTO produktkategorie VALUES('3', 'Bremse', 'Bremsscheiben und Bremsklötze');
-INSERT INTO produktkategorie VALUES('4', 'Radio', 'Autoradio');
-INSERT INTO produktkategorie VALUES('5', 'Polzster', 'Sitzbezüge');
-INSERT INTO produktkategorie VALUES('6', 'Boden', 'Gummimatten zum Unterlegen');
+INSERT INTO produktkategorie VALUES('Sommerreifen', 'Sommerreifen für das Auto');
+INSERT INTO produktkategorie VALUES('Winterreifen', 'Winterreifen für das Auto');
+INSERT INTO produktkategorie VALUES('Bremse', 'Bremsscheiben und Bremsklötze');
+INSERT INTO produktkategorie VALUES('Radio', 'Autoradio');
+INSERT INTO produktkategorie VALUES('Polzster', 'Sitzbezüge');
+INSERT INTO produktkategorie VALUES('Boden', 'Gummimatten zum Unterlegen');
+INSERT INTO produktkategorie VALUES('Auspuff', 'Auto-Auspuff');
+INSERT INTO produktkategorie VALUES('Motor', 'Teile für den Automotor');
+INSERT INTO produktkategorie VALUES('Karosserie', 'Teile für die Autokarosserie');
 
 
 /*
@@ -58,10 +67,10 @@ INSERT INTO produktkategorie VALUES('6', 'Boden', 'Gummimatten zum Unterlegen');
 	`Steuernummer` Int,
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO lieferant VALUES('1', 'Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , '1');
-INSERT INTO lieferant VALUES('2', 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , '1');
-INSERT INTO lieferant VALUES('3', 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , '2');
-INSERT INTO lieferant VALUES('4', 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 1652487 , '2');
+INSERT INTO lieferant VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , '1');
+INSERT INTO lieferant VALUES( 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , '1');
+INSERT INTO lieferant VALUES( 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , '2');
+INSERT INTO lieferant VALUES( 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de', 1652487 , '2');
 
 
 
@@ -75,20 +84,25 @@ INSERT INTO lieferant VALUES('4', 'Kenwood', '0158 7945281', 'Kenwood@yahoo.de',
 	`Mitarbeiter_ID` Char(10) NULL,
 	`Kunde_ID` Char(10) NULL,)
 */
-INSERT INTO adresse VALUES('1', 'Königsstraße 21', '32427', 'Minden', NULL, '1', NULL);
-INSERT INTO adresse VALUES('2', 'Am Kolk', '32427', 'Minden', NULL, '2', NULL);
-INSERT INTO adresse VALUES('3', 'Atilleriestraße 4', '32427', 'Minden', NULL, '3', NULL);
-INSERT INTO adresse VALUES('4', 'Hohenstaufenring 22', '32427', 'Minden', NULL, '4', NULL);
-INSERT INTO adresse VALUES('5', 'Bismarckstarße 5', '32427', 'Minden', NULL, '5', NULL);
-INSERT INTO adresse VALUES('6', 'Ringstraße 9', '32427', 'Minden', '1', NULL, NULL);
-INSERT INTO adresse VALUES('7', 'Berliner Ring 2', '38440', 'Wolfsburg', '2', NULL, NULL);
-INSERT INTO adresse VALUES('8', 'An der Stadtmühle 2', '32423', 'Minden', '3', NULL, NULL);
-INSERT INTO adresse VALUES('9', 'Musterstraße 9', '50529', 'Pulheim', NULL, NULL, '1');
-INSERT INTO adresse VALUES('10', 'Napoleonstraße 2', '31749', 'Auetal', NULL, NULL, '2');
-INSERT INTO adresse VALUES('11', 'Westerholz 10', '31749', 'Auetal', NULL, NULL, '3');
-INSERT INTO adresse VALUES('12', 'Rahdener Straße 11', '32339', 'Lübbecke', NULL, NULL, '4');
-INSERT INTO adresse VALUES('13', 'Hahler Straße 4', '32427', 'Minden', NULL, NULL, '5');
-INSERT INTO adresse VALUES('13', 'Bergstraße 7', '85221', 'Dachau', '3', NULL, NULL);
+INSERT INTO adresse VALUES( 'Königsstraße 21', '32427', 'Minden', NULL, '1', NULL);
+INSERT INTO adresse VALUES( 'Am Kolk', '32427', 'Minden', NULL, '2', NULL);
+INSERT INTO adresse VALUES( 'Atilleriestraße 4', '32427', 'Minden', NULL, '3', NULL);
+INSERT INTO adresse VALUES( 'Hohenstaufenring 22', '32427', 'Minden', NULL, '4', NULL);
+INSERT INTO adresse VALUES( 'Bismarckstraße 5', '32427', 'Minden', NULL, '5', NULL);
+INSERT INTO adresse VALUES( 'Ringstraße 9', '32427', 'Minden', '1', NULL, NULL);
+INSERT INTO adresse VALUES( 'Berliner Ring 2', '38440', 'Wolfsburg', '2', NULL, NULL);
+INSERT INTO adresse VALUES( 'An der Stadtmühle 2', '32423', 'Minden', '3', NULL, NULL);
+INSERT INTO adresse VALUES( 'Musterstraße 9', '50529', 'Pulheim', NULL, NULL, '1');
+INSERT INTO adresse VALUES( 'Napoleonstraße 2', '31749', 'Auetal', NULL, NULL, '2');
+INSERT INTO adresse VALUES( 'Westerholz 10', '31749', 'Auetal', NULL, NULL, '3');
+INSERT INTO adresse VALUES( 'Rahdener Straße 11', '32339', 'Lübbecke', NULL, NULL, '4');
+INSERT INTO adresse VALUES( 'Hahler Straße 4', '32427', 'Minden', NULL, NULL, '5');
+INSERT INTO adresse VALUES( 'Bergstraße 7', '85221', 'Dachau', '4', NULL, NULL);
+INSERT INTO adresse VALUES( 'Königsstraße 23', '32427', 'Minden', NULL, '6', NULL);
+INSERT INTO adresse VALUES( 'Hahler Straße 21', '32427', 'Minden', NULL, '7', NULL);
+INSERT INTO adresse VALUES( 'Königswall 2', '32427', 'Minden', NULL, '8', NULL);
+INSERT INTO adresse VALUES( 'Hohenzollernring 21', '32427', 'Minden', NULL, '9', NULL);
+INSERT INTO adresse VALUES( 'Portastraße 1', '32427', 'Minden', NULL, '10', NULL);
 
 /*
 	INSERT für die Tabelle Kundenbestellung
@@ -101,9 +115,9 @@ INSERT INTO adresse VALUES('13', 'Bergstraße 7', '85221', 'Dachau', '3', NULL, 
 INSERT INTO kundenbestellung VALUES('1', STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, '1', '1');
 INSERT INTO kundenbestellung VALUES('2', STR_TO_DATE('1/10/2018 10:53:26 AM', '%c/%e/%Y %r'), true, '2', '2');
 INSERT INTO kundenbestellung VALUES('3', STR_TO_DATE('1/15/2018 11:06:26 AM', '%c/%e/%Y %r'), true, '3', '2');
-INSERT INTO kundenbestellung VALUES('4', STR_TO_DATE('1/20/2018 7:46:48 AM', '%c/%e/%Y %r'), true, '3', '2');
+INSERT INTO kundenbestellung VALUES('4', STR_TO_DATE('1/20/2018 7:46:48 AM', '%c/%e/%Y %r'), false, '3', '2');
 INSERT INTO kundenbestellung VALUES('5', STR_TO_DATE('1/23/2018 16:46:36 PM', '%c/%e/%Y %r'), true, '5', '1');
-INSERT INTO kundenbestellung VALUES('6', STR_TO_DATE('1/23/2018 18:46:36 PM', '%c/%e/%Y %r'), true, '4', '1');
+INSERT INTO kundenbestellung VALUES('6', STR_TO_DATE('1/23/2018 18:46:36 PM', '%c/%e/%Y %r'), false, '4', '1');
 
 
 /*
@@ -133,11 +147,11 @@ INSERT INTO artikel VALUES('6', 'Sportliche Sitzbezüge', 'Sitzbezüge für Vord
 	`Lieferant_ID` Char(10),)
 */
 INSERT INTO produkt VALUES('1', 'Michelin Sommerreifen', 120, 1589, 1000, '1', '1');
-INSERT INTO produkt VALUES('2', 'Kenwood Radio', 80, 1589, 1000, '4', '4');
-INSERT INTO produkt VALUES('3', 'Walser Autositzbezug', 70, 1589, 1000, '5', '2');
-INSERT INTO produkt VALUES('4', 'Purework Auto-Gummimatten', 30, 1589, 1000, '6', '3');
-INSERT INTO produkt VALUES('5', 'Michelin Winterreifen', 120, 1589, 1000, '2', '1');
-INSERT INTO produkt VALUES('5', 'Bremsscheiben und Beläge', 150, 1589, 1000, '2', '1');
+INSERT INTO produkt VALUES('2', 'Kenwood Radio', 80, 1000, 800, '4', '4');
+INSERT INTO produkt VALUES('3', 'Walser Autositzbezug', 70, 800, 890, '5', '2');
+INSERT INTO produkt VALUES('4', 'Purework Auto-Gummimatten', 30, 800, 803, '6', '3');
+INSERT INTO produkt VALUES('5', 'Michelin Winterreifen', 120, 1402, 1000, '2', '1');
+INSERT INTO produkt VALUES('5', 'Bremsscheiben und Beläge', 150, 1203, 900, '2', '1');
 
 
 
