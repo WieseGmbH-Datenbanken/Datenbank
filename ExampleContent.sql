@@ -95,24 +95,40 @@ VALUES( STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, 1, 1),
 
 
 INSERT INTO Artikel (Name, Beschreibung, Verkaufspreis)
-VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480),
-( 'Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480),
+VALUES( 'Michelin Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480),
+( 'Continental Reifen Set Sommer', 'Continental Energy Saver+ 205/55 R16 91V Sommerreifen ', 500),
+( 'Michelin Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480),
+( 'Continental Reifen Set Winter', 'Continental Alpin 5 205/55 R16 91H M+S Winterreifen', 600),
 ( '2er Set Bremsen', 'Ein Set aus 2 Bremsscheiben und Bremsbeläge, Innenbelüftet', 300),
+( '2er Set Bremsen (VW)', 'Ein Set aus 2 Bremsscheiben und Bremsbeläge für VW Modelle, Innenbelüftet', 300),
 ( '4er Set Bremsen', 'Ein Set aus 4 Bremsscheiben und Bremsbeläge ', 600),
-( 'Kenwood Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion', 80),
+( 'Kenwood Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion von Kenwood', 80),
+( 'Continental Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion von Continental', 100),
+( 'JVC Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion von JVC', 95),
+( 'Dab+ Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion von Dab+', 105),
+( 'Marquant Autoradio', 'Autoradio mit AUX-Anschluss und Bluetoothfunktion von Marquant', 85),
 ( 'Sportliche Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Polo und Golf', 70),
+( 'VW Polo Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Polo', 90),
+( 'VW Touran Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Touran', 95),
+( 'VW Golf Sitzbezüge', 'Sitzbezüge für Vordersitze und Rückbank, geeignet für VW Golf', 80),
 ( 'Leistungsstarke Autobatterie', 'Hält länger als andere Batterien!', 50),
 ( 'Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100),
-( 'Heckverkleidung', 'Heckverkleidung für VW Polo', 120);
+( 'Diesel-Katalysator', 'Katalysator für Dieselmotoren', 200),
+( 'Benzin-Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100),
+( 'VW Golf Heckverkleidung', 'Heckverkleidung für VW Golf', 170),
+( 'VW Polo Heckverkleidung', 'Heckverkleidung für VW Polo', 130),
+( 'VW Touran Heckverkleidung', 'Heckverkleidung für VW Touran', 130);
 
 
 
 INSERT INTO Produkt (Name, Einkaufspreis, Lagerbestand, Mindestbestand, Kategorie_ID, Lieferant_ID)
 VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
-( 'Kenwood Radio', 80, 1000, 800, 4, 4),
-( 'Walser Autositzbezug', 70, 800, 890, 5, 2),
+( 'Continental Sommerreifen', 140, 1400, 1000, 1, 1),
+( 'Radio', 80, 1000, 800, 4, 4),
+( 'Autositzbezug', 70, 800, 890, 5, 2),
 ( 'Purework Auto-Gummimatten', 30, 800, 803, 6, 3),
-( 'Michelin Winterreifen', 120, 1402, 1000, 2, 1),
+( 'Michelin Winterreifen', 170, 1402, 1000, 2, 1),
+( 'Continental Winterreifen', 190, 1200, 1000, 2, 1),
 ( 'Bremsscheiben und Beläge', 150, 1203, 900, 3, 1),
 ( 'Autobatterie', 50, 500, 300, 8, 1),
 ( 'Katalysator', 100, 600, 700, 7, 2),
@@ -123,15 +139,28 @@ VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
 
 
 INSERT INTO Produkt_Artikel VALUES(1, 1);
-INSERT INTO Produkt_Artikel VALUES(5, 2);
+INSERT INTO Produkt_Artikel VALUES(2, 2);
 INSERT INTO Produkt_Artikel VALUES(6, 3);
-INSERT INTO Produkt_Artikel VALUES(6, 4);
-INSERT INTO Produkt_Artikel VALUES(2, 5);
-INSERT INTO Produkt_Artikel VALUES(3, 6);
-INSERT INTO Produkt_Artikel VALUES(7, 7);
-INSERT INTO Produkt_Artikel VALUES(8, 8);
-INSERT INTO Produkt_Artikel VALUES(9, 9);
-
+INSERT INTO Produkt_Artikel VALUES(7, 4);
+INSERT INTO Produkt_Artikel VALUES(8, 5);
+INSERT INTO Produkt_Artikel VALUES(8, 6);
+INSERT INTO Produkt_Artikel VALUES(8, 7);
+INSERT INTO Produkt_Artikel VALUES(3, 8);
+INSERT INTO Produkt_Artikel VALUES(3, 9);
+INSERT INTO Produkt_Artikel VALUES(3, 10);
+INSERT INTO Produkt_Artikel VALUES(3, 11);
+INSERT INTO Produkt_Artikel VALUES(3, 12);
+INSERT INTO Produkt_Artikel VALUES(4, 13);
+INSERT INTO Produkt_Artikel VALUES(4, 14);
+INSERT INTO Produkt_Artikel VALUES(4, 15);
+INSERT INTO Produkt_Artikel VALUES(4, 16);
+INSERT INTO Produkt_Artikel VALUES(9, 17);
+INSERT INTO Produkt_Artikel VALUES(10, 18);
+INSERT INTO Produkt_Artikel VALUES(10, 19);
+INSERT INTO Produkt_Artikel VALUES(10, 20);
+INSERT INTO Produkt_Artikel VALUES(11, 21);
+INSERT INTO Produkt_Artikel VALUES(11, 22);
+INSERT INTO Produkt_Artikel VALUES(11, 23);
 
 
 INSERT INTO Lieferantenbestellung (Auftragsdatum, Status, Lieferant_ID)
