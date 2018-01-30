@@ -2,103 +2,103 @@
 Alle Mitarbeiter die einen Lieferauftrag betreuen, der noch nicht abgewickelt ist.
 
 
-SELECT mitarbeiter.Name, mitarbeiter.Mitarbeiter_ID, mitarbeiter.Vorname, lieferantenbestellung.LAuftrag_ID 
+SELECT Mitarbeiter.Name, Mitarbeiter.Mitarbeiter_ID, Mitarbeiter.Vorname, Lieferantenbestellung.LAuftrag_ID 
 
-FROM mitarbeiter JOIN lieferant ON mitarbeiter.Mitarbeiter_ID = lieferant.Mitarbeiter_ID
+FROM Mitarbeiter JOIN Lieferant ON Mitarbeiter.Mitarbeiter_ID = Lieferant.Mitarbeiter_ID
 
-JOIN lieferantenbestellung ON lieferant.Lieferant_ID = lieferantenbestellung.Lieferant_ID
+JOIN Lieferantenbestellung ON Lieferant.Lieferant_ID = Lieferantenbestellung.Lieferant_ID
 
-WHERE lieferantenbestellung.Status = 0;
+WHERE Lieferantenbestellung.Status = 0;
 
 Alle Mitarbeiter die einen Lieferauftrag betreut haben.
 
-SELECT mitarbeiter.Name, mitarbeiter.Mitarbeiter_ID, mitarbeiter.Vorname, lieferantenbestellung.LAuftrag_ID 
+SELECT Mitarbeiter.Name, Mitarbeiter.Mitarbeiter_ID, Mitarbeiter.Vorname, Lieferantenbestellung.LAuftrag_ID 
 
-FROM mitarbeiter JOIN lieferant ON mitarbeiter.Mitarbeiter_ID = lieferant.Mitarbeiter_ID
+FROM Mitarbeiter JOIN Lieferant ON Mitarbeiter.Mitarbeiter_ID = Lieferant.Mitarbeiter_ID
 
-JOIN lieferantenbestellung ON lieferant.Lieferant_ID = lieferantenbestellung.Lieferant_ID
+JOIN Lieferantenbestellung ON Lieferant.Lieferant_ID = Lieferantenbestellung.Lieferant_ID
 
-WHERE lieferantenbestellung.Status = 1;
+WHERE Lieferantenbestellung.Status = 1;
 
 
 2)
 Alle Mitarbeiter die eine Bestellung betreuen, die noch nicht abgewickelt ist.
 
 
-SELECT mitarbeiter.Mitarbeiter_ID, mitarbeiter.Name, mitarbeiter.Vorname, kunde.Kunde_ID, kunde.Name, kundenbestellung.Auftrag_ID
+SELECT Mitarbeiter.Mitarbeiter_ID, Mitarbeiter.Name, Mitarbeiter.Vorname, Kunde.Kunde_ID, Kunde.Name, Kundenbestellung.Auftrag_ID
 
-FROM mitarbeiter JOIN kundenbestellung ON mitarbeiter.Mitarbeiter_ID = kundenbestellung.Mitarbeiter_ID
+FROM Mitarbeiter JOIN Kundenbestellung ON Mitarbeiter.Mitarbeiter_ID = Kundenbestellung.Mitarbeiter_ID
 
-JOIN Kunde ON kundenbestellung.Kunde_ID = kunde.Kunde_ID
+JOIN Kunde ON Kundenbestellung.Kunde_ID = Kunde.Kunde_ID
 
-WHERE kundenbestellung.Status = 0;
+WHERE Kundenbestellung.Status = 0;
 
 Alle Mitarbeiter die eine Bestellung erfolgreich betreut haben
 
-SELECT mitarbeiter.Mitarbeiter_ID, mitarbeiter.Name, mitarbeiter.Vorname, kunde.Kunde_ID, kunde.Name, kundenbestellung.Auftrag_ID
+SELECT Mitarbeiter.Mitarbeiter_ID, Mitarbeiter.Name, Mitarbeiter.Vorname, Kunde.Kunde_ID, Kunde.Name, Kundenbestellung.Auftrag_ID
 
-FROM mitarbeiter JOIN kundenbestellung ON mitarbeiter.Mitarbeiter_ID = kundenbestellung.Mitarbeiter_ID
+FROM Mitarbeiter JOIN Kundenbestellung ON Mitarbeiter.Mitarbeiter_ID = Kundenbestellung.Mitarbeiter_ID
 
-JOIN Kunde ON kundenbestellung.Kunde_ID = kunde.Kunde_ID
+JOIN Kunde ON Kundenbestellung.Kunde_ID = Kunde.Kunde_ID
 
-WHERE kundenbestellung.Status = 1;
+WHERE Kundenbestellung.Status = 1;
 
 
 3)
 Welches produkt muss nachbestellt werden?
 
-SELECT produkt.Name, produktkategorie.Kategorie, produkt.Lagerbestand, produkt.Mindestbestand
+SELECT Produkt.Name, Produktkategorie.Kategorie, Produkt.Lagerbestand, Produkt.Mindestbestand
 
-FROM produkt JOIN produktkategorie ON produkt.Kategorie_ID = produktkategorie.Kategorie_ID
+FROM Produkt JOIN Produktkategorie ON Produkt.Kategorie_ID = Produktkategorie.Kategorie_ID
 
-WHERE produkt.Lagerbestand < produkt.Mindestbestand;
+WHERE Produkt.Lagerbestand < Produkt.Mindestbestand;
 
 
 4)
 Alle Kundenbestellungen
 
-SELECT kunde.Name, kunde.Vorname, kundenbestellung.Auftrag_ID, artikel.Name
+SELECT Kunde.Name, Kunde.Vorname, Kundenbestellung.Auftrag_ID, Artikel.Name
 
 
-FROM kunde JOIN kundenbestellung ON kunde.Kunde_ID = kundenbestellung.Kunde_ID
+FROM Kunde JOIN Kundenbestellung ON Kunde.Kunde_ID = Kundenbestellung.Kunde_ID
 
 
-JOIN artikel_Kundenbestellung ON artikel_Kundenbestellung.Auftrag_ID = kundenbestellung.Auftrag_ID
+JOIN Artikel_Kundenbestellung ON Artikel_Kundenbestellung.Auftrag_ID = Kundenbestellung.Auftrag_ID
 
 
-JOIN artikel ON artikel.Artikel_ID = artikel_Kundenbestellung.Artikel_ID
+JOIN Artikel ON Artikel.Artikel_ID = Artikel_Kundenbestellung.Artikel_ID
 
 
-ORDER BY kundenbestellung.Auftrag_ID ASC;
+ORDER BY Kundenbestellung.Auftrag_ID ASC;
 
 
 5)
 Kunden die etwas aus der Kategorie Motor bestellt haben
 
-SELECT kunde.Kunde_ID, kunde.Name, kunde.Vorname FROM kunde WHERE kunde.Kunde_ID IN 
+SELECT Kunde.Kunde_ID, Kunde.Name, Kunde.Vorname FROM Kunde WHERE Kunde.Kunde_ID IN 
 	
-	(SELECT kundenbestellung.Kunde_ID FROM kundenbestellung WHERE kundenbestellung.Auftrag_ID IN 
+	(SELECT Kundenbestellung.Kunde_ID FROM Kundenbestellung WHERE Kundenbestellung.Auftrag_ID IN 
 		
-		(SELECT Artikel_Kundenbestellung.Auftrag_ID FROM artikel_kundenbestellung WHERE artikel_kundenbestellung.Artikel_ID IN  
+		(SELECT Artikel_Kundenbestellung.Auftrag_ID FROM Artikel_Kundenbestellung WHERE Artikel_Kundenbestellung.Artikel_ID IN  
 			
-			(SELECT produkt_artikel.Artikel_ID FROM produkt_artikel WHERE produkt_artikel.Produkt_ID IN 
+			(SELECT Produkt_Artikel.Artikel_ID FROM Produkt_Artikel WHERE Produkt_Artikel.Produkt_ID IN 
 				
-				(SELECT produkt.Produkt_ID FROM produkt WHERE produkt.Kategorie_ID IN 
+				(SELECT Produkt.Produkt_ID FROM Produkt WHERE Produkt.Kategorie_ID IN 
 					
-					(SELECT produktkategorie.Kategorie_ID FROM produktkategorie WHERE produktkategorie.Kategorie LIKE "%Motor%")))))
+					(SELECT Produktkategorie.Kategorie_ID FROM Produktkategorie WHERE Produktkategorie.Kategorie LIKE "%Motor%")))))
 
 
 6)
 Welcher Kunde wird von wem beliefert?
 
 
-Select kunde.Kunde_id,kunde.Name, lieferant.Name From kunde 
-Join kundenbestellung 
-ON kunde.Kunde_ID = kundenbestellung.Kunde_ID 
-Join artikel_kundenbestellung ON kundenbestellung.Auftrag_ID = artikel_kundenbestellung.Auftrag_ID 
-JOIN produkt_artikel 
-ON artikel_kundenbestellung.Artikel_ID = produkt_artikel.Artikel_ID 
-JOIN produkt 
-ON produkt_artikel.Produkt_ID = produkt.Produkt_ID 
-JOIN lieferant
- ON produkt.Lieferant_ID = lieferant.Lieferant_ID
+SELECT Kunde.Kunde_id, Kunde.Name, Lieferant.Name FROM Kunde 
+JOIN Kundenbestellung 
+ON Kunde.Kunde_ID = Kundenbestellung.Kunde_ID 
+JOIN Artikel_Kundenbestellung ON Kundenbestellung.Auftrag_ID = Artikel_Kundenbestellung.Auftrag_ID 
+JOIN Produkt_Artikel 
+ON Artikel_Kundenbestellung.Artikel_ID = Produkt_Artikel.Artikel_ID 
+JOIN Produkt 
+ON Produkt_Artikel.Produkt_ID = Produkt.Produkt_ID 
+JOIN Lieferant
+ ON Produkt.Lieferant_ID = Lieferant.Lieferant_ID
