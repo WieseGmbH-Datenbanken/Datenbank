@@ -1,4 +1,4 @@
-﻿
+
 INSERT INTO Adresse (Strasse, PLZ, Ort)
 VALUES( 'Königsstraße 21', '32427', 'Minden'),
 ( 'Am Kolk', '32427', 'Minden'),
@@ -130,8 +130,8 @@ VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
 ( 'Michelin Winterreifen', 170, 1402, 1000, 2, 1),
 ( 'Continental Winterreifen', 190, 1200, 1000, 2, 1),
 ( 'Bremsscheiben und Beläge', 150, 1203, 900, 3, 1),
-( 'Autobatterie', 50, 500, 300, 8, 1),
-( 'Katalysator', 100, 600, 700, 7, 2),
+( 'Autobatterie', 50, 500, 300, 7, 1),
+( 'Katalysator', 100, 600, 700, 8, 2),
 ( 'Heckverkleidung', 120, 550, 500, 9, 3);
 
 
@@ -197,7 +197,7 @@ VALUES (1,1),
 (4, 4),
 (5, 5),
 (6, 6),
-(7, 7),
+(17, 7),
 (8, 8),
 (9, 9);
 
