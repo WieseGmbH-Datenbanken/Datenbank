@@ -1,13 +1,4 @@
-﻿/*
-	Insert für die Tabelle Adresse
-	Values(`Adresse_ID` Char(10),
-	`Strasse` Char(255),
-	`PLZ` Char(255),
-	`Ort` Char(255),
-	`Lieferant_ID` Char(10) NULL,
-	`Mitarbeiter_ID` Char(10) NULL,
-	`Kunde_ID` Char(10) NULL,)
-*/
+﻿
 INSERT INTO Adresse (Strasse, PLZ, Ort)
 VALUES( 'Königsstraße 21', '32427', 'Minden'),
 ( 'Am Kolk', '32427', 'Minden'),
@@ -37,18 +28,7 @@ VALUES( 'Königsstraße 21', '32427', 'Minden'),
 ( 'Napoleonstraße 23', '31749', 'Auetal');
 
 
-/*
-	INSERT für die Tabelle Mitarbeiter 
-    Values(`Mitarbeiter_ID` Char(10),
-	`Funktion` Char(255),
-	`Anrede` Char(255),
-    `Name` Char(225),
-	`Vorname` Char(255),
-	`Telefon` Char(255),
-	`Email` Char(255),
-	`Steuernummer` Int,
-	`Lohn` Double,)
-*/
+
 INSERT INTO Mitarbeiter (Funktion, Anrede, Name, Vorname, Telefon, Email, Steuernummer, Lohn, Adresse_ID)
 VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 1329763, '3000', 1),
 ('Verkäufer', 'Herr', 'Müller', 'Helmut', '0175 975631', 'HMüller@gmx.de', 1321984, '3000', 2),
@@ -64,16 +44,7 @@ VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 
 
 
 
-/*
-	INSERT für die Tabelle Kunde
-	Values(`Kunde_ID` Char(10),
-	`Anrede` Char(255),
-	`Name` Char(255),
-	`Vorname` Char(255),
-	`Telefon` Char(255),
-	`Email` Char(255),
-	`Zahlungsart` Char(255),)
-*/
+
 INSERT INTO Kunde (Anrede, Name, Vorname, Telefon, Email, Zahlungsart, Adresse_ID)
 VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal', 9),
 ('Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal', 10),
@@ -88,12 +59,7 @@ VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'Pa
 ('Herr', 'Köller', 'Andreas', '0571 5977469', 'AKöller@gmx.de', 'PayPal',25);
 
 
-/*
-	INSERT für die Tabelle Produktkategorie
-    Values(`Kategorie_ID` Char(10),
-	`Kategorie` Char(255),
-	`Beschreibung` Char(255),)
-*/
+
 INSERT INTO Produktkategorie (Kategorie, Beschreibung)
 VALUES('Sommerreifen', 'Sommerreifen für das Auto'),
 ('Winterreifen', 'Winterreifen für das Auto'),
@@ -106,15 +72,7 @@ VALUES('Sommerreifen', 'Sommerreifen für das Auto'),
 ('Karosserie', 'Teile für die Autokarosserie');
 
 
-/*
-	INSERT für die Tabelle Lieferant
-    Values(`Lieferant_ID` Char(10),
-	`Name` Char(255),
-	`Telefon` Char(255),
-	`Email` Char(255),
-	`Steuernummer` Int,
-	`Mitarbeiter_ID` Char(10),)
-*/
+
 INSERT INTO Lieferant (Name, Telefon, Email, Steuernummer, Mitarbeiter_ID, Adresse_ID) 
 VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1, 6),
 ( 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , 1, 7),
@@ -123,14 +81,7 @@ VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1, 6),
 
 
 
-/*
-	INSERT für die Tabelle Kundenbestellung
-    Values(`Auftrag_ID` Char(10),
-	`Auftragsdatum` Datetime,
-	`Status` Bool,
-	`Kunde_ID` Char(10),
-	`Mitarbeiter_ID` Char(10),)
-*/
+
 INSERT INTO Kundenbestellung (Auftragsdatum, Status, Kunde_ID, Mitarbeiter_ID)
 VALUES( STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, 1, 1),
 ( STR_TO_DATE('1/10/2018 10:53:26 AM', '%c/%e/%Y %r'), true, 2, 2),
@@ -142,14 +93,7 @@ VALUES( STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, 1, 1),
 ( STR_TO_DATE('1/26/2018 7:46:36 PM', '%c/%e/%Y %r'), false, 7, 9),
 ( STR_TO_DATE('1/29/2018 5:42:36 PM', '%c/%e/%Y %r'), false, 8, 7);
 
-/*
-	INSERT für die Tabelle Artikel
-    Values(`Artikel_ID` Char(10),
-	`Name` Char(255),
-	`Beschreibung` Char(255),
-	`Verkaufspreis` Double,
-	`Auftrag_ID` Char(10),)
-*/
+
 INSERT INTO Artikel (Name, Beschreibung, Verkaufspreis)
 VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480),
 ( 'Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480),
@@ -161,16 +105,8 @@ VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen
 ( 'Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100),
 ( 'Heckverkleidung', 'Heckverkleidung für VW Polo', 120);
 
-/*
-	INSERT für die Tabelle Produkt
-    Values(`Produkt_ID` Char(10),
-	`Name` Char(255),
-	`Einkaufspreis` Double,
-	`Lagerbestand` int,
-	`Mindestbestand` int,
-	`Kategorie_ID` Char(10),
-	`Lieferant_ID` Char(10),)
-*/
+
+
 INSERT INTO Produkt (Name, Einkaufspreis, Lagerbestand, Mindestbestand, Kategorie_ID, Lieferant_ID)
 VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
 ( 'Kenwood Radio', 80, 1000, 800, 4, 4),
@@ -185,11 +121,7 @@ VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
 
 
 
-/*
-	INSERT für Zwischentabelle Produkt_Artikel
-    Values(`Produkt_ID` Char(10),
-	`Artikel_ID` Char(10),)
-*/
+
 INSERT INTO Produkt_Artikel VALUES(1, 1);
 INSERT INTO Produkt_Artikel VALUES(5, 2);
 INSERT INTO Produkt_Artikel VALUES(6, 3);
@@ -201,13 +133,7 @@ INSERT INTO Produkt_Artikel VALUES(8, 8);
 INSERT INTO Produkt_Artikel VALUES(9, 9);
 
 
-/*
-	INSERT für die Tabelle Lieferantenbestellung
-    Values(`LAuftrag_ID` Char(10),
-	`Auftragsdatum` Datetime,
-	`Status` Bool,
-	`Lieferant_ID` Char(10),)
-*/
+
 INSERT INTO Lieferantenbestellung (Auftragsdatum, Status, Lieferant_ID)
 VALUES( STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), true, 1),
 ( STR_TO_DATE('1/12/2018 12:16:26 PM', '%c/%e/%Y %r'), false, 4),
@@ -222,11 +148,7 @@ VALUES( STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), true, 1),
 
 
 
-/*
-	INSERT für die Zwischentabelle Lieferantenbestellung_Produkt
-    Values(`LAuftrag_ID` Char(10),	
-	`Produkt_ID` Char(10),)
-*/
+
 INSERT INTO Lieferantenbestellung_Produkt VALUES(1, 1);
 INSERT INTO Lieferantenbestellung_Produkt VALUES(2, 2);
 INSERT INTO Lieferantenbestellung_Produkt VALUES(3, 3);
@@ -237,11 +159,7 @@ INSERT INTO Lieferantenbestellung_Produkt VALUES(7, 8);
 INSERT INTO Lieferantenbestellung_Produkt VALUES(8, 9);
 
 
-/*
-	INSERT für die Zwischentabelle Artikel_Kundenbestellung
-	`Artikel_ID` INTEGER,
-	`Auftrag_ID` INTEGER,
-*/
+
 
 INSERT INTO Artikel_Kundenbestellung (Artikel_ID, Auftrag_ID)
 VALUES (1,1),
