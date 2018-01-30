@@ -8,7 +8,7 @@
 	`Mitarbeiter_ID` Char(10) NULL,
 	`Kunde_ID` Char(10) NULL,)
 */
-INSERT INTO adresse (Strasse, PLZ, Ort)
+INSERT INTO Adresse (Strasse, PLZ, Ort)
 VALUES( 'Königsstraße 21', '32427', 'Minden'),
 ( 'Am Kolk', '32427', 'Minden'),
 ( 'Atilleriestraße 4', '32427', 'Minden'),
@@ -49,7 +49,7 @@ VALUES( 'Königsstraße 21', '32427', 'Minden'),
 	`Steuernummer` Int,
 	`Lohn` Double,)
 */
-INSERT INTO mitarbeiter (Funktion, Anrede, Name, Vorname, Telefon, Email, Steuernummer, Lohn, Adresse_ID)
+INSERT INTO Mitarbeiter (Funktion, Anrede, Name, Vorname, Telefon, Email, Steuernummer, Lohn, Adresse_ID)
 VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 1329763, '3000', 1),
 ('Verkäufer', 'Herr', 'Müller', 'Helmut', '0175 975631', 'HMüller@gmx.de', 1321984, '3000', 2),
 ('Manager', 'Herr', 'Hoffmann', 'Michael', '0175 761458', 'MHoffmann@gmx.de', 132975, '4500', 3),
@@ -74,7 +74,7 @@ VALUES('Verkäufer', 'Herr', 'Meier', 'Oliver', '0175 845621', 'OMeier@gmx.de', 
 	`Email` Char(255),
 	`Zahlungsart` Char(255),)
 */
-INSERT INTO kunde (Anrede, Name, Vorname, Telefon, Email, Zahlungsart, Adresse_ID)
+INSERT INTO Kunde (Anrede, Name, Vorname, Telefon, Email, Zahlungsart, Adresse_ID)
 VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'PayPal', 9),
 ('Herr', 'Schmidt', 'Tim', '1873 7539518', 'TimSchmidt@yahoo.de', 'PayPal', 10),
 ('Herr', 'Klaas', 'Oliver', '1893 741852', 'KOliver@google.de', 'Direktüberweisung', 11),
@@ -94,7 +94,7 @@ VALUES('Frau', 'Schmidt', 'Vanessa', '1873 1674582', 'VaniSchmidt@yahoo.de', 'Pa
 	`Kategorie` Char(255),
 	`Beschreibung` Char(255),)
 */
-INSERT INTO produktkategorie (Kategorie, Beschreibung)
+INSERT INTO Produktkategorie (Kategorie, Beschreibung)
 VALUES('Sommerreifen', 'Sommerreifen für das Auto'),
 ('Winterreifen', 'Winterreifen für das Auto'),
 ('Bremse', 'Bremsscheiben und Bremsklötze'),
@@ -115,7 +115,7 @@ VALUES('Sommerreifen', 'Sommerreifen für das Auto'),
 	`Steuernummer` Int,
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO lieferant (Name, Telefon, Email, Steuernummer, Mitarbeiter_ID, Adresse_ID) 
+INSERT INTO Lieferant (Name, Telefon, Email, Steuernummer, Mitarbeiter_ID, Adresse_ID) 
 VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1, 6),
 ( 'Volkswagen', '0175 79135482', 'VWWerke@gmx.de', 9272354 , 1, 7),
 ( 'TAV Autoverwertung', '0571 36863', 'TAVAuto@yahoo.de', 7315482 , 2, 8),
@@ -131,7 +131,7 @@ VALUES('Audi', '0175 9768253', 'audiVetrieb@google.de', 6757531 , 1, 6),
 	`Kunde_ID` Char(10),
 	`Mitarbeiter_ID` Char(10),)
 */
-INSERT INTO kundenbestellung (Auftragsdatum, Status, Kunde_ID, Mitarbeiter_ID)
+INSERT INTO Kundenbestellung (Auftragsdatum, Status, Kunde_ID, Mitarbeiter_ID)
 VALUES( STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, 1, 1),
 ( STR_TO_DATE('1/10/2018 10:53:26 AM', '%c/%e/%Y %r'), true, 2, 2),
 ( STR_TO_DATE('1/15/2018 11:06:26 AM', '%c/%e/%Y %r'), true, 3, 2),
@@ -150,7 +150,7 @@ VALUES( STR_TO_DATE('1/02/2018 8:06:26 AM', '%c/%e/%Y %r'), true, 1, 1),
 	`Verkaufspreis` Double,
 	`Auftrag_ID` Char(10),)
 */
-INSERT INTO artikel (Name, Beschreibung, Verkaufspreis)
+INSERT INTO Artikel (Name, Beschreibung, Verkaufspreis)
 VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen ', 480),
 ( 'Reifen Set Winter', 'Michelin Alpin 5 205/55 R16 91H M+S Winterreifen', 480),
 ( '2er Set Bremsen', 'Ein Set aus 2 Bremsscheiben und Bremsbeläge, Innenbelüftet', 300),
@@ -171,7 +171,7 @@ VALUES( 'Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Sommerreifen
 	`Kategorie_ID` Char(10),
 	`Lieferant_ID` Char(10),)
 */
-INSERT INTO produkt (Name, Einkaufspreis, Lagerbestand, Mindestbestand, Kategorie_ID, Lieferant_ID)
+INSERT INTO Produkt (Name, Einkaufspreis, Lagerbestand, Mindestbestand, Kategorie_ID, Lieferant_ID)
 VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
 ( 'Kenwood Radio', 80, 1000, 800, 4, 4),
 ( 'Walser Autositzbezug', 70, 800, 890, 5, 2),
@@ -190,15 +190,15 @@ VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
     Values(`Produkt_ID` Char(10),
 	`Artikel_ID` Char(10),)
 */
-INSERT INTO produkt_artikel VALUES(1, 1);
-INSERT INTO produkt_artikel VALUES(5, 2);
-INSERT INTO produkt_artikel VALUES(6, 3);
-INSERT INTO produkt_artikel VALUES(6, 4);
-INSERT INTO produkt_artikel VALUES(2, 5);
-INSERT INTO produkt_artikel VALUES(3, 6);
-INSERT INTO produkt_artikel VALUES(7, 7);
-INSERT INTO produkt_artikel VALUES(8, 8);
-INSERT INTO produkt_artikel VALUES(9, 9);
+INSERT INTO Produkt_Artikel VALUES(1, 1);
+INSERT INTO Produkt_Artikel VALUES(5, 2);
+INSERT INTO Produkt_Artikel VALUES(6, 3);
+INSERT INTO Produkt_Artikel VALUES(6, 4);
+INSERT INTO Produkt_Artikel VALUES(2, 5);
+INSERT INTO Produkt_Artikel VALUES(3, 6);
+INSERT INTO Produkt_Artikel VALUES(7, 7);
+INSERT INTO Produkt_Artikel VALUES(8, 8);
+INSERT INTO Produkt_Artikel VALUES(9, 9);
 
 
 /*
@@ -208,7 +208,7 @@ INSERT INTO produkt_artikel VALUES(9, 9);
 	`Status` Bool,
 	`Lieferant_ID` Char(10),)
 */
-INSERT INTO lieferantenbestellung (Auftragsdatum, Status, Lieferant_ID)
+INSERT INTO Lieferantenbestellung (Auftragsdatum, Status, Lieferant_ID)
 VALUES( STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), true, 1),
 ( STR_TO_DATE('1/12/2018 12:16:26 PM', '%c/%e/%Y %r'), false, 4),
 ( STR_TO_DATE('1/15/2018 2:56:25 PM', '%c/%e/%Y %r'), true, 2),
@@ -227,14 +227,14 @@ VALUES( STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), true, 1),
     Values(`LAuftrag_ID` Char(10),	
 	`Produkt_ID` Char(10),)
 */
-INSERT INTO lieferantenbestellung_produkt VALUES(1, 1);
-INSERT INTO lieferantenbestellung_produkt VALUES(2, 2);
-INSERT INTO lieferantenbestellung_produkt VALUES(3, 3);
-INSERT INTO lieferantenbestellung_produkt VALUES(4, 4);
-INSERT INTO lieferantenbestellung_produkt VALUES(5, 5);
-INSERT INTO lieferantenbestellung_produkt VALUES(6, 7);
-INSERT INTO lieferantenbestellung_produkt VALUES(7, 8);
-INSERT INTO lieferantenbestellung_produkt VALUES(8, 9);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(1, 1);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(2, 2);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(3, 3);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(4, 4);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(5, 5);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(6, 7);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(7, 8);
+INSERT INTO Lieferantenbestellung_Produkt VALUES(8, 9);
 
 
 /*
