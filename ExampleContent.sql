@@ -113,7 +113,7 @@ VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
 ( 'Walser Autositzbezug', 70, 800, 890, 5, 2),
 ( 'Purework Auto-Gummimatten', 30, 800, 803, 6, 3),
 ( 'Michelin Winterreifen', 120, 1402, 1000, 2, 1),
-( 'Bremsscheiben und Beläge', 150, 1203, 900, 2, 1),
+( 'Bremsscheiben und Beläge', 150, 1203, 900, 3, 1),
 ( 'Autobatterie', 50, 500, 300, 8, 1),
 ( 'Katalysator', 100, 600, 700, 7, 2),
 ( 'Heckverkleidung', 120, 550, 500, 9, 3);
