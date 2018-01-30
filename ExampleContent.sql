@@ -117,8 +117,8 @@ VALUES( 'Michelin Reifen Set Sommer', 'Michelin Energy Saver+ 205/55 R16 91V Som
 ( 'Benzin-Katalysator', 'Fängt mehr Schadstoffe ab als andere!', 100),
 ( 'VW Golf Heckverkleidung', 'Heckverkleidung für VW Golf', 170),
 ( 'VW Polo Heckverkleidung', 'Heckverkleidung für VW Polo', 130),
-( 'VW Touran Heckverkleidung', 'Heckverkleidung für VW Touran', 130);
-
+( 'VW Touran Heckverkleidung', 'Heckverkleidung für VW Touran', 130),
+( 'Purework Auto-Gummimatten', 'Gummimatten für Fahrer- und Beifahrer-Fußraum, passend für VW Polo', 40);
 
 
 INSERT INTO Produkt (Name, Einkaufspreis, Lagerbestand, Mindestbestand, Kategorie_ID, Lieferant_ID)
@@ -130,8 +130,8 @@ VALUES( 'Michelin Sommerreifen', 120, 1589, 1000, 1, 1),
 ( 'Michelin Winterreifen', 170, 1402, 1000, 2, 1),
 ( 'Continental Winterreifen', 190, 1200, 1000, 2, 1),
 ( 'Bremsscheiben und Beläge', 150, 1203, 900, 3, 1),
-( 'Autobatterie', 50, 500, 300, 7, 1),
-( 'Katalysator', 100, 600, 700, 8, 2),
+( 'Autobatterie', 50, 500, 300, 8, 1),
+( 'Katalysator', 100, 600, 700, 7, 2),
 ( 'Heckverkleidung', 120, 550, 500, 9, 3);
 
 
@@ -161,7 +161,7 @@ INSERT INTO Produkt_Artikel VALUES(10, 20);
 INSERT INTO Produkt_Artikel VALUES(11, 21);
 INSERT INTO Produkt_Artikel VALUES(11, 22);
 INSERT INTO Produkt_Artikel VALUES(11, 23);
-
+INSERT INTO Produkt_Artikel VALUES(5, 24);
 
 INSERT INTO Lieferantenbestellung (Auftragsdatum, Status, Lieferant_ID)
 VALUES( STR_TO_DATE('1/08/2018 10:06:26 AM', '%c/%e/%Y %r'), true, 1),
