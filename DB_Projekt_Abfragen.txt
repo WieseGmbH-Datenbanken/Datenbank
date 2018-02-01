@@ -53,11 +53,11 @@ ORDER BY Kundenbestellung.Auftrag_ID ASC;
 Kunden die etwas aus der Kategorie Motor bestellt haben
 
 SELECT Kunde.Kunde_ID, Kunde.Name, Kunde.Vorname FROM Kunde WHERE Kunde.Kunde_ID IN 
-	(SELECT Kundenbestellung.Kunde_ID FROM Kundenbestellung WHERE Kundenbestellung.Auftrag_ID IN 
-		(SELECT Artikel_Kundenbestellung.Auftrag_ID FROM Artikel_Kundenbestellung WHERE Artikel_Kundenbestellung.Artikel_ID IN  
-			(SELECT Produkt_Artikel.Artikel_ID FROM Produkt_Artikel WHERE Produkt_Artikel.Produkt_ID IN 
-				(SELECT Produkt.Produkt_ID FROM Produkt WHERE Produkt.Kategorie_ID IN 
-					(SELECT Produktkategorie.Kategorie_ID FROM Produktkategorie WHERE Produktkategorie.Kategorie LIKE "%Motor%")))))
+    (SELECT Kundenbestellung.Kunde_ID FROM Kundenbestellung WHERE Kundenbestellung.Auftrag_ID IN 
+        (SELECT Artikel_Kundenbestellung.Auftrag_ID FROM Artikel_Kundenbestellung WHERE Artikel_Kundenbestellung.Artikel_ID IN  
+            (SELECT Produkt_Artikel.Artikel_ID FROM Produkt_Artikel WHERE Produkt_Artikel.Produkt_ID IN 
+                (SELECT Produkt.Produkt_ID FROM Produkt WHERE Produkt.Kategorie_ID IN 
+                    (SELECT Produktkategorie.Kategorie_ID FROM Produktkategorie WHERE Produktkategorie.Kategorie LIKE "%Motor%")))));
 
 
 6)
